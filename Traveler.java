@@ -156,6 +156,6 @@ public void setTraveler_counter(int traveler_counter) {
 	
 	return x;
 	
-}boop
+}
  */
 }
