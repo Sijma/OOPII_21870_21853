@@ -1,6 +1,3 @@
-
-
-
 /**
  * @author lampr
  *
@@ -14,21 +11,35 @@ public class City {
 	 * @param cafes
 	 * @param restaurants
 	 * @param bars
-         * @param beaches
-         * @param monuments
+     * @param beaches
+     * @param monuments
 	 * @param lat
 	 * @param lon
 	 * @param weather
-         * @param name
+     * @param name
 	 */
+	public City()
+	{
+		name ="";
+		Museums = 0;
+		Cafes = 0;
+		Restaurants = 0;
+		Bars = 0;
+		Beaches = 0;
+		Monuments = 0;
+		lat = 0;
+		lon = 0;
+		weather = "";
+	}
+
 	public City(String name,int museums, int cafes, int restaurants ,int bars, int beaches,int monuments,double lat, double lon, String weather) {
 		this.name = name;
 		this.Museums = museums;
 		this.Cafes = cafes;
 		this.Restaurants = restaurants;
 		this.Bars = bars;
-                this.Beaches = beaches;
-                this.Monuments = monuments;
+        this.Beaches = beaches;
+        this.Monuments = monuments;
 		this.lat=lat;
 		this.lon = lon;
 		this.weather = weather;
@@ -110,15 +121,15 @@ public class City {
 		Bars = bars;
 	}
 	/**
-	 * @return the lan
+	 * @return the lat
 	 */
 	public double getLat() {
 		return lat;
 	}
 	/**
-	 * @param lat the lan to set
+	 * @param lat the lat to set
 	 */
-	public void setLan(double lat) {
+	public void setLat(double lat) {
 		this.lat = lat;
 	}
 	/**
