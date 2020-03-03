@@ -11,13 +11,14 @@ public class City {
 	 * @param cafes
 	 * @param restaurants
 	 * @param bars
-     * @param beaches
-     * @param monuments
+	 * @param beaches
+	 * @param monuments
 	 * @param lat
 	 * @param lon
 	 * @param weather
-     * @param name
+	 * @param name
 	 */
+
 	public City()
 	{
 		name ="";
@@ -44,7 +45,6 @@ public class City {
 		this.lon = lon;
 		this.weather = weather;
 	}
-
     
 
     public String getName() {
@@ -121,13 +121,13 @@ public class City {
 		Bars = bars;
 	}
 	/**
-	 * @return the lat
+	 * @return the lan
 	 */
 	public double getLat() {
 		return lat;
 	}
 	/**
-	 * @param lat the lat to set
+	 * @param lat the lan to set
 	 */
 	public void setLat(double lat) {
 		this.lat = lat;
@@ -156,5 +156,23 @@ public class City {
 	public void setWeather(String weather) {
 		this.weather = weather;
 	}
+
+
+
+	@Override
+	public String toString() {
+		return "name=" + name + ", Museums=" + Museums + ", Cafes=" + Cafes + ", Restaurants=" + Restaurants
+				+ ", Bars=" + Bars + ", Beaches=" + Beaches + ", Monuments=" + Monuments + "";
+	}
+
+
+
+
+
+
+
+
+	
     
 }
+
