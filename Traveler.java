@@ -11,13 +11,13 @@ public class Traveler {
  * @param current_lon
  */
 public Traveler(String name, int age, int current_lat, int current_lon) {
-	
+
 	this.Name = name;
 	this.Age = age;
 	this.current_lat = current_lat;
 	this.current_lon = current_lon; 
 	traveler_counter++;
-	  
+
 }
 /**
  * @return the name
@@ -67,7 +67,7 @@ public int getCurrent_lon() {
 public void setCurrent_lon(int current_lon) {
 	this.current_lon = current_lon;
 }
- 
+
  public void preference() 
  {
 	 String pr_array[] = {"Museums","Cafe","Restaurants","Bars","Beaches","Monuments"};
@@ -151,10 +151,40 @@ public int getTraveler_counter() {
 public void setTraveler_counter(int traveler_counter) {
 	Traveler.traveler_counter++;
 }
-/*public  double Similarity(City ob) {
-	
-	return x;
-	
+
+public double Similarity (City C)
+{
+	return 0.0;
 }
- */
+
+public City CompareCities(ArrayList<City> CitiesArray)
+{
+	City highest = null;
+	double max = -1;
+	int i;
+	for (i=0;i<=CitiesArray.size()-1;i++)
+	{
+		if (Similarity(CitiesArray.get(i)) > max)
+		{
+			max = Similarity(CitiesArray.get(i));
+			highest = CitiesArray.get(i);
+		}
+	}
+	return highest;
+}
+
+
+/*&public static int CountDistinctWords(City c1) {
+	c1.toString();
+	//String s[]=str.split(" ");
+	ArrayList<String> list=new ArrayList<String>();
+	
+	for (int i = 1; i < s.length; i++) {
+	    if (!(list.contains(s[i]))) {
+	        list.add(s[i]);
+	    }
+	}
+	return 	list.size();
+}
+*/
 }
