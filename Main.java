@@ -1,3 +1,9 @@
+import com.fasterxml.jackson.databind.ObjectMapper;
+import weather.OpenWeatherMap;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.net.URL;
+
 /**
  * @author sijma
  *
@@ -7,7 +13,7 @@ public class Main {
 	/**
 	 * @param args
 	 */
-	public static void main(String[] args)
+	public static void main(String[] args) throws IOException, FileNotFoundException
 	{
 		// TODO Auto-generated method stub
 		City c = new City();
@@ -22,6 +28,6 @@ public class Main {
 		c.setBeaches(0);
 		c.setMonuments(0);
 		c.toString();
+		//OpenData.RetrieveData("athens");
 	}
-
 }

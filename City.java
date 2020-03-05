@@ -1,3 +1,7 @@
+import com.fasterxml.jackson.databind.ObjectMapper;
+import weather.OpenWeatherMap;
+import java.net.URL;
+
 /**
  * @author lampr
  *
@@ -157,6 +161,21 @@ public class City {
 		this.weather = weather;
 	}
 
+	public static boolean ValidCity(String CityName)
+	{
+		ObjectMapper mapper = new ObjectMapper();
+		try
+		{
+			OpenWeatherMap weather_obj = mapper.readValue(new URL("http://api.openweathermap.org/data/2.5/weather?q="+CityName+"&APPID="+OpenData.appid+""), OpenWeatherMap.class);
+			weather_obj.getMain();
+		}
+		catch (Exception FileNotFoundException)
+		{
+			System.out.println("City doesn't exist");
+			return false;
+		}
+		return true;
+	}
 
 
 	@Override
