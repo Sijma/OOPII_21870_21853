@@ -77,7 +77,7 @@ public void setCurrent_lon(int current_lon) {
      int choice = 0;
      boolean valid;
      Scanner input = new Scanner(System.in); //User input and validity checks
-     System.out.printf("what would you like to visit the most? Enter the corresponding numbers one by one or 7 to finilize input: \n1)Museums\n2)Cafe\n3)Restaurants\n4)Bars\n5)Beaches\n6)Monuments\n7)End\n");
+     System.out.printf("what would you like to visit the most? Enter the corresponding numbers one by one or 7 to finalize input: \n1)Museums\n2)Cafe\n3)Restaurants\n4)Bars\n5)Beaches\n6)Monuments\n7)End\n");
 	    while (i <= 6 )
 	    {
 	    	while (!input.hasNextInt()) //Input is int
@@ -121,8 +121,9 @@ public void setCurrent_lon(int current_lon) {
 	    	potentialCity = input.next();
 	    	if (!potentialCity.equals("end")) 
 	    	{
-	    		valid = true;
-	    		for(i=0;i <= pCities.size()-1;i++)
+	    		valid = City.ValidCity(potentialCity); //Check if city exists
+	    		i = 0;
+	    		while (i <= pCities.size()-1 && valid)
 	    	    {
 	    	    	if (potentialCity.equalsIgnoreCase(pCities.get(i))) //Check if input has already been registered before.
 	    	    	{
@@ -130,6 +131,7 @@ public void setCurrent_lon(int current_lon) {
 	    	    		valid = false;
 	    	    		break;
 	    	    	}
+	    	    	i++;
 	    	    }
 	    		if (valid)
 	    		{
