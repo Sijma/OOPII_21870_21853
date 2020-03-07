@@ -1,7 +1,9 @@
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import weather.OpenWeatherMap;
@@ -150,7 +152,8 @@ public class Traveler {
 		Traveler.traveler_counter++;
 	}
 
-	public double Similarity(City c) throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
+	public double Similarity(City c) throws InvocationTargetException, IllegalAccessException, NoSuchMethodException
+	{
 		java.lang.reflect.Method method;
 		int i;
 		int temp;
@@ -167,12 +170,15 @@ public class Traveler {
 		return similars / 6;
 	}
 
-	public City CompareCities(ArrayList<City> CitiesArray) {
+	public City CompareCities(ArrayList<City> CitiesArray) throws IllegalAccessException, NoSuchMethodException, InvocationTargetException
+	{
 		City highest = null;
 		double max = -1;
 		int i;
-		for (i = 0; i <= CitiesArray.size() - 1; i++) {
-			if (Similarity(CitiesArray.get(i)) > max) {
+		for (i = 0; i <= CitiesArray.size() - 1; i++)
+		{
+			if (Similarity(CitiesArray.get(i)) > max)
+			{
 				max = Similarity(CitiesArray.get(i));
 				highest = CitiesArray.get(i);
 			}
@@ -180,7 +186,7 @@ public class Traveler {
 		return highest;
 	}
 
-	public City CompareCities(ArrayList<City> CitiesArray, boolean weather)
+	public City CompareCities(ArrayList<City> CitiesArray, boolean weather) throws IOException, IllegalAccessException, NoSuchMethodException, InvocationTargetException
 	{
 		int i;
 		if (weather)
@@ -189,7 +195,6 @@ public class Traveler {
 			for (i = 0; i <= CitiesArray.size() - 1; i++)
 			{
 				OpenWeatherMap weather_obj = mapper.readValue(new URL("http://api.openweathermap.org/data/2.5/weather?q="+CitiesArray.get(i).getName()+"&APPID="+OpenData.appid +""), OpenWeatherMap.class);
-
 			}
 		}
 		return CompareCities(CitiesArray);
