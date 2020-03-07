@@ -6,7 +6,8 @@ import java.net.URL;
  * @author lampr
  *
  */
-public class City {
+public class City
+{
 	int Museums,Cafes,Restaurants,Bars,Beaches,Monuments;
         double lat,lon;
         String weather,name;
@@ -37,7 +38,7 @@ public class City {
 		weather = "";
 	}
 
-	public City(String name,int museums, int cafes, int restaurants ,int bars, int beaches,int monuments,double lat, double lon, String weather) {
+	public City(String name, int museums, int cafes, int restaurants , int bars, int beaches, int monuments, double lat, double lon, String weather) {
 		this.name = name;
 		this.Museums = museums;
 		this.Cafes = cafes;
