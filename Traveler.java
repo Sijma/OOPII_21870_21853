@@ -1,8 +1,18 @@
+import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.ArrayList;
 import java.util.Scanner;  
+import com.fasterxml.jackson.databind.ObjectMapper;
+import weather.OpenWeatherMap;
+import wikipedia.MediaWiki;
+import java.io.IOException;
+import java.io.FileNotFoundException;
+import java.net.MalformedURLException;
+import java.net.URL;
 public class Traveler
 {
 	String Name;
+        public String chosen[] = {null,null,null,null,null,null}; //array of available and user choice
+        public String pr_array[] = {"Museums","Cafe","Restaurants","Bars","Beaches","Monuments"};
  	int Age,current_lat,current_lon;
  	private static int traveler_counter;
 	/**
@@ -72,8 +82,6 @@ public class Traveler
 
 	 public void preference()
 	 {
-		 String pr_array[] = {"Museums","Cafe","Restaurants","Bars","Beaches","Monuments"};
-		 String chosen[] = {null,null,null,null,null,null}; //array of available and user choices
 		 int i = 0;
 		 int j;
 		 int choice = 0;
@@ -156,9 +164,19 @@ public class Traveler
 		Traveler.traveler_counter++;
 	}
 
-	public double Similarity (City C)
-	{
-		return 0.0;
+	public double Similarity (City c)
+	{   
+            java.lang.reflect.Method method;
+            int i;
+            int similars = 0;
+            for (i=0; i<=5; i++)
+            {
+                if(c.getMuseums() >= 0 && true)
+                {
+                    similars++;
+                }
+            }
+            return similars/6;
 	}
 
 	public City CompareCities(ArrayList<City> CitiesArray)
@@ -177,8 +195,9 @@ public class Traveler
 		return highest;
 	}
 
-	public City CompareCities(ArrayList<City> CitiesArray, boolean weather)
+	public City CompareCities(ArrayList<City> CitiesArray, boolean weather) throws MalformedURLException
 	{
+            int i;
 		if (weather)
 		{
 			ObjectMapper mapper = new ObjectMapper();
@@ -191,18 +210,7 @@ public class Traveler
 				}
 			}
 		}
-		City highest = null;
-		double max = -1;
-		int i;
-		for (i=0;i<=CitiesArray.size()-1;i++)
-		{
-			if (Similarity(CitiesArray.get(i)) > max)
-			{
-				max = Similarity(CitiesArray.get(i));
-				highest = CitiesArray.get(i);
-			}
-		}
-		return highest;
+		return CompareCities(CitiesArray);
 	}
 
 
@@ -210,7 +218,6 @@ public class Traveler
 		c1.toString();
 		//String s[]=str.split(" ");
 		ArrayList<String> list=new ArrayList<String>();
-
 		for (int i = 1; i < s.length; i++) {
 			if (!(list.contains(s[i]))) {
 				list.add(s[i]);
@@ -219,4 +226,3 @@ public class Traveler
 		return 	list.size();
 	}
 	*/
-}
