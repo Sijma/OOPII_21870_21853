@@ -29,5 +29,8 @@ public class Main {
 		c.setMonuments(0);
 		c.toString();
 		//OpenData.RetrieveData("athens");
+		ObjectMapper mapper = new ObjectMapper();
+		OpenWeatherMap weather_obj = mapper.readValue(new URL("http://api.openweathermap.org/data/2.5/weather?q=london&APPID="+OpenData.appid +""), OpenWeatherMap.class);
+		System.out.println(weather_obj.getWeather());
 	}
 }
