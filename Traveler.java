@@ -10,19 +10,19 @@ import weather.OpenWeatherMap;
 import java.net.URL;
 public class Traveler {
 	private String Name;
-
+	public Boolean chosen[] = {false, false, false, false, false, false}; //array of available and user choice
 	public String pr_array[] = {"Museums", "Cafe", "Restaurants", "Bars", "Beaches", "Monuments"};
 	private int Age, current_lat, current_lon;
 	private ArrayList<City> CitiesArray = new ArrayList<City>();
 	private static int traveler_counter;
-        public Boolean chosen[] = {false, false, false, false, false, false}; //array of available and user choice
+
 	/**
 	 * @param name
 	 * @param age
 	 * @param current_lat
 	 * @param current_lon
 	 */
-	public Traveler(String name, int age, int current_lat, int current_lon,boolean[] ChosenArray) {
+	public Traveler(String name, int age, int current_lat, int current_lon) {
 		this.Name = name;
 		this.Age = age;
 		this.current_lat = current_lat;
@@ -32,10 +32,11 @@ public class Traveler {
         
         public Traveler()
         {
-            Name ="";
+            Name = "";
             Age = 0;
             current_lat = 0;
             current_lon = 0;
+            traveler_counter++;
         }
 
 	City c = new City();
@@ -207,7 +208,17 @@ public class Traveler {
 		}
 		return CompareCities(CitiesArray);
 	}
-
 }
 
-	
+	/*&public static int CountDistinctWords(City c1) {
+		c1.toString();
+		//String s[]=str.split(" ");
+		ArrayList<String> list=new ArrayList<String>();
+		for (int i = 1; i < s.length; i++) {
+			if (!(list.contains(s[i]))) {
+				list.add(s[i]);
+			}
+		}
+		return 	list.size();
+	}
+	*/
