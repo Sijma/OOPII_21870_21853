@@ -3,6 +3,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import weather.OpenWeatherMap;
+import java.lang.Math;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -22,7 +23,7 @@ public class Business extends Traveler
     {
         ObjectMapper mapper = new ObjectMapper();
         OpenWeatherMap weather_obj = mapper.readValue(new URL("http://api.openweathermap.org/data/2.5/weather?q="+SourceCityName+"&APPID="+OpenData.appid+""), OpenWeatherMap.class);
-	lat = weather_obj.getCoord().getLat();
+	    lat = weather_obj.getCoord().getLat();
         lon = weather_obj.getCoord().getLon();
     }
     
@@ -30,11 +31,11 @@ public class Business extends Traveler
     {
         lat1 = lat;
         lon1 = lon;
-	if ((lat1 == lat2) && (lon1 == lon2)) 
+	    if ((lat1 == lat2) && (lon1 == lon2))
             {
                 return 0;
             }
-       else 
+        else
             {
                 double theta = lon1 - lon2;
                 double dist = Math.sin(Math.toRadians(lat1)) * Math.sin(Math.toRadians(lat2)) + Math.cos(Math.toRadians(lat1)) * Math.cos(Math.toRadians(lat2)) * Math.cos(Math.toRadians(theta));
@@ -44,9 +45,14 @@ public class Business extends Traveler
                 return (dist);
             }
     }
+    public static double log2(double x)
+    {
+        return (Math.log(x) / Math.log(2));
+    }
+
     @Override
     public double Similarity(City c)
     {
-        return 1-(distance(lat,lon,c.lat,c.lon)/ MaxDistance);
+        return log2((2-distance(lat,lon,c.getLat(),c.getLon()))/MaxDistance);
     }
 }

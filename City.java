@@ -1,5 +1,7 @@
 import com.fasterxml.jackson.databind.ObjectMapper;
 import weather.OpenWeatherMap;
+import wikipedia.MediaWiki;
+import java.io.IOException;
 import java.net.URL;
 
 /**
@@ -8,25 +10,17 @@ import java.net.URL;
  */
 public class City
 {
-	int Museums,Cafes,Restaurants,Bars,Beaches,Monuments;
-        double lat,lon;
-        String weather,name;
-	/**
-	 * @param museums
-	 * @param cafes
-	 * @param restaurants
-	 * @param bars
-	 * @param beaches
-	 * @param monuments
-	 * @param lat
-	 * @param lon
-	 * @param weather
-	 * @param name
-	 */
+	private int Museums,Cafes,Restaurants,Bars,Beaches,Monuments;
+	private double lat,lon;
+	private String weather;
+	private String name;
+	private String country;
+	private String info;
 
-	public City()
+	public City(String name, String country)
 	{
-		name ="";
+		this.name = name;
+		this.country = country;
 		Museums = 0;
 		Cafes = 0;
 		Restaurants = 0;
@@ -36,6 +30,7 @@ public class City
 		lat = 0;
 		lon = 0;
 		weather = "";
+		info = "";
 	}
 
 	public City(String name, int museums, int cafes, int restaurants , int bars, int beaches, int monuments, double lat, double lon, String weather) {
@@ -44,39 +39,57 @@ public class City
 		this.Cafes = cafes;
 		this.Restaurants = restaurants;
 		this.Bars = bars;
-                this.Beaches = beaches;
-                this.Monuments = monuments;
+		this.Beaches = beaches;
+		this.Monuments = monuments;
 		this.lat=lat;
 		this.lon = lon;
 		this.weather = weather;
 	}
-    
 
-    public String getName() {
+	public String getInfo()
+	{
+		return info;
+	}
+
+	public void setInfo(String info)
+	{
+		this.info = info;
+	}
+
+    public String getName()
+	{
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(String name)
+	{
         this.name = name;
     }
 
-    public int getBeaches() {
+    public int getBeaches()
+	{
         return Beaches;
     }
 
-    public void setBeaches(int Beaches) {
+    public void setBeaches(int Beaches)
+	{
         this.Beaches = Beaches;
     }
 
-    public int getMonuments() {
+    public int getMonuments()
+	{
         return Monuments;
     }
 
-    public void setMonuments(int Monuments) {
+    public void setMonuments(int Monuments)
+	{
         this.Monuments = Monuments;
     }
 
-    
+	public String getCountry()
+	{
+		return country;
+	}
 	/**
 	 * @return the museums
 	 */
@@ -162,8 +175,15 @@ public class City
 		this.weather = weather;
 	}
 
-	public static boolean ValidCity(String CityName)
+	public static boolean ValidCity(String CityName) throws IOException
 	{
+		//ArrayIndexOutOfBoundsException
+		String C[] = CityName.split(",");
+		if (C.length != 2)
+		{
+			System.out.println("Wrong Format. Please type in: [City],[CountryInitials], without the brackets.\n");
+			return false;
+		}
 		ObjectMapper mapper = new ObjectMapper();
 		try
 		{
@@ -172,27 +192,19 @@ public class City
 		}
 		catch (Exception FileNotFoundException)
 		{
-			System.out.println("City doesn't exist");
+			System.out.println("City doesn't exist.\n");
 			return false;
 		}
 		return true;
 	}
 
-
-	@Override
-	public String toString() {
-		return "name=" + name + ", Museums=" + Museums + ", Cafes=" + Cafes + ", Restaurants=" + Restaurants
-				+ ", Bars=" + Bars + ", Beaches=" + Beaches + ", Monuments=" + Monuments + "";
+	public String CityWikiInfo(String CityName) throws IOException
+	{
+		ObjectMapper mapper = new ObjectMapper();
+		MediaWiki mediaWiki_obj =  mapper.readValue(new URL("https://en.wikipedia.org/w/api.php?action=query&prop=extracts&titles="+CityName+"&format=json&formatversion=2"),MediaWiki.class);
+		String info = mediaWiki_obj.getQuery().getPages().get(0).getExtract();
+		info = info.replaceAll("\\<.*?\\>", "");
+		return info;
 	}
-
-
-
-
-
-
-
-
-	
-    
 }
 

@@ -1,19 +1,18 @@
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import weather.OpenWeatherMap;
 import java.net.URL;
+
 public class Traveler {
 	private String Name;
 	public Boolean chosen[] = {false, false, false, false, false, false}; //array of available and user choice
 	public String pr_array[] = {"Museums", "Cafe", "Restaurants", "Bars", "Beaches", "Monuments"};
 	private int Age, current_lat, current_lon;
-	private ArrayList<City> CitiesArray = new ArrayList<City>();
+	private ArrayList<City> CitiesArray;
 	private static int traveler_counter;
 
 	/**
@@ -22,24 +21,26 @@ public class Traveler {
 	 * @param current_lat
 	 * @param current_lon
 	 */
-	public Traveler(String name, int age, int current_lat, int current_lon) {
+	public Traveler(String name, int age, int current_lat, int current_lon)
+	{
 		this.Name = name;
 		this.Age = age;
 		this.current_lat = current_lat;
 		this.current_lon = current_lon;
 		traveler_counter++;
 	}
-        
-        public Traveler()
-        {
-            Name = "";
-            Age = 0;
-            current_lat = 0;
-            current_lon = 0;
-            traveler_counter++;
-        }
 
-	City c = new City();
+	public Traveler()
+	{
+		Name = "";
+		Age = 0;
+		current_lat = 0;
+		current_lon = 0;
+		CitiesArray = new ArrayList<City>();
+	    traveler_counter++;
+	}
+
+	City c = new City("Athens", "GR");
 
 	/**
 	 * @return the name
@@ -97,7 +98,18 @@ public class Traveler {
 		this.current_lon = current_lon;
 	}
 
-	public void preference() {
+	public ArrayList<City> getCitiesArray()
+	{
+		return CitiesArray;
+	}
+
+	public void setCitiesArray(ArrayList<City> citiesArray)
+	{
+		CitiesArray = citiesArray;
+	}
+
+	public void preference() throws IOException
+	{
 		int i = 0;
 		int j;
 		int choice = 0;
@@ -123,16 +135,18 @@ public class Traveler {
 				else break;
 			} else System.out.println("Invalid input. Please try again\n");
 		}
-		int chosenAmount = i - 1; //Amount of chosen keywords
-		System.out.println("Add a few potential cities. Enter 'end' when done.");
+		System.out.println("Add a few potential cities in [City],[CountryInitials] format. Enter 'end' when done.\n");
 		ArrayList<String> pCities = new ArrayList<String>(); //Making arraylist for potential cities.
 		String potentialCity = "";
-		while (!potentialCity.equals("end")) {
+		while (!potentialCity.equals("end"))
+		{
 			potentialCity = input.next();
-			if (!potentialCity.equals("end")) {
+			if (!potentialCity.equals("end"))
+			{
 				valid = City.ValidCity(potentialCity); //Check if city exists
 				i = 0;
-				while (i <= pCities.size() - 1 && valid) {
+				while (i <= pCities.size() - 1 && valid)
+				{
 					if (potentialCity.equalsIgnoreCase(pCities.get(i))) //Check if input has already been registered before.
 					{
 						System.out.println("City Already exists.");
