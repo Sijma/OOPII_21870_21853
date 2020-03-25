@@ -3,6 +3,7 @@ import weather.OpenWeatherMap;
 import wikipedia.MediaWiki;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 
 /**
  * @author lampr
@@ -205,6 +206,38 @@ public class City
 		String info = mediaWiki_obj.getQuery().getPages().get(0).getExtract();
 		info = info.replaceAll("\\<.*?\\>", "");
 		return info;
+	}
+
+	public int CountDistinctWords(String CityInfo)
+	{
+		String s[]=CityInfo.split(" ");
+		ArrayList<String> list=new ArrayList<String>();
+		for (int i = 1; i < s.length; i++)
+		{
+			if (!(list.contains(s[i])))
+			{
+				list.add(s[i]);
+			}
+		}
+		return 	list.size();
+	}
+
+	public int CountWordResults (String CityInfo, String Pattern)
+	{
+		int index = CityInfo.indexOf(Pattern);
+		int count = 0;
+		while (index != -1)
+		{
+			count++;
+			CityInfo = CityInfo.substring(index + 1);
+			index = CityInfo.indexOf(Pattern);
+		}
+		return count;
+	}
+
+	public void FillCityInfo (City c)
+	{
+
 	}
 }
 
