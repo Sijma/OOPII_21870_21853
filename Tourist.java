@@ -26,7 +26,7 @@ public class Tourist extends Traveler
                 
 		for (i = 0; i <= 5; i++)
 		{
-			Method m = c.getClass().getMethod("get"+pr_array[i]);
+			Method m = c.getClass().getMethod("get"+ tags[i]);
 			temp = (int) m.invoke(c);
                         total = total + temp;
 			if (temp >= 0 && chosen[i])
