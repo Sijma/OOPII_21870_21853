@@ -51,25 +51,17 @@ public class Main
 				int i;
 				AllTravelers.get(index).setAge(age);
 				TempCityNames = AllTravelers.get(index).InputCities();
-				System.out.printf("1");
 				for (i=0;i<=TempCityNames.size()-1;i++)
 				{
 					String C[] = TempCityNames.get(i).split(",");
 					TempCityObjectsList.add(new City(C[0],C[1]));
 					TempCityObjectsList.get(i).FillCityInfo(TempCityObjectsList.get(i));
 				}
-				System.out.printf("2");
 				AllTravelers.get(index).setCitiesArray(TempCityObjectsList);
-				System.out.printf("3");
 				AllTravelers.get(index).PreferenceTags();
-				System.out.printf("4");
-				System.out.printf("index: "+index);
 				TempCityObjectsList = AllTravelers.get(index).getCitiesArray();
-				System.out.printf("5");
 				BestCity = AllTravelers.get(index).CompareCities(TempCityObjectsList);
-				System.out.printf("6");
 				AllTravelers.get(index).PrintCityInfo(BestCity);
-				System.out.printf("7");
 			}
 		}
 	}

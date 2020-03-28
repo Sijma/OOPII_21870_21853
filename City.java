@@ -208,7 +208,6 @@ public class City
 			return false;
 		}
 		ObjectMapper mapper = new ObjectMapper();
-		System.out.printf("CityName"+CityName);
 		try
 		{
 			OpenWeatherMap weather_obj = mapper.readValue(new URL("https://api.openweathermap.org/data/2.5/weather?q="+CityName+"&APPID="+appid+""), OpenWeatherMap.class);
