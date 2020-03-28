@@ -1,29 +1,27 @@
+import com.fasterxml.jackson.databind.ObjectMapper;
+import weather.OpenWeatherMap;
+import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.net.URL;
+
 public class Main
 {
 	public static ArrayList<Traveler> AllTravelers = new ArrayList<Traveler>();
-	public static void main(String[] args)
+	public static void main(String[] args) throws IOException, NoSuchMethodException, IllegalAccessException, InvocationTargetException
 	{
-		// TODO Auto-generated method stub
-		/*City c = new City("Athens", "GR");
-		//OpenData.RetrieveData("athens");
-		ObjectMapper mapper = new ObjectMapper();
-		OpenWeatherMap weather_obj = mapper.readValue(new URL("http://api.openweathermap.org/data/2.5/weather?q=athens&APPID="+OpenData.appid +""), OpenWeatherMap.class);
-		System.out.println(weather_obj.getWeather());
-		MediaWiki mediaWiki_obj =  mapper.readValue(new URL("https://en.wikipedia.org/w/api.php?action=query&prop=extracts&titles=london&format=json&formatversion=2"),MediaWiki.class);
-		//System.out.println("Athens Wikipedia article: "+mediaWiki_obj.getQuery().getPages().get(0).getExtract());
-		String a = mediaWiki_obj.getQuery().getPages().get(0).getExtract();
-		a = a.replaceAll("\\<.*?\\>", "");
-		System.out.println(a);
-		 */
 		int choice = 0;
 		int index;
 		int age;
+		ArrayList<String> TempCityNames = new ArrayList<String>();
+		ArrayList<City> TempCityObjectsList = new ArrayList<City>();
 		Scanner scan = new Scanner(System.in);
 		while (choice != 4)
 		{
 			choice = Traveler.MenuOption();
+			TempCityNames.clear();
+			TempCityObjectsList.clear();
 			if(choice==1)
 			{
 				AllTravelers.add(new Traveler());
@@ -36,24 +34,40 @@ public class Main
 			{
 				AllTravelers.add(new Tourist());
 			}
-			else if (choice!=4)
+			else
 			{
-				System.out.printf("Invalid input. Please try again");
+				break;
 			}
-
 			if (choice !=4)
 			{
 				index = Traveler.traveler_counter - 1;
-				System.out.printf("What is your name?");
+				System.out.printf("What is your name?\n");
 				AllTravelers.get(index).setName(scan.next());
-				System.out.printf("How old are you?");
+				System.out.printf("How old are you?\n");
 				age = Traveler.intScan();
 				while (age <= 0)
 				{
 					System.out.printf("Invalid input. Please try again\n");
 					age = Traveler.intScan();
 				}
+				int i;
 				AllTravelers.get(index).setAge(age);
+				TempCityNames = AllTravelers.get(index).InputCities();
+				System.out.printf("1");
+				//TempCityObjectsList = (TempCityNames);
+				for (i=0;i<=TempCityNames.size()-1;i++)
+				{
+					String C[] = TempCityNames.get(i).split(",");
+					TempCityObjectsList.add(new City(C[0],C[1]));
+					TempCityObjectsList.get(i).FillCityInfo(TempCityObjectsList.get(i));
+				}
+				System.out.printf("2");
+				AllTravelers.get(index).setCitiesArray(TempCityObjectsList);
+				System.out.printf("3");
+				for (i=0;i<=AllTravelers.get(index).getCitiesArray().size()-1;i++)
+				{
+					AllTravelers.get(index).getCitiesArray().get(i).PrintCityInfo(AllTravelers.get(index).getCitiesArray().get(i));
+				}
 			}
 		}
 	}

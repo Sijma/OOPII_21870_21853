@@ -2,6 +2,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import weather.OpenWeatherMap;
 import wikipedia.MediaWiki;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.net.URL;
 import java.util.ArrayList;
 
@@ -16,7 +18,25 @@ public class City
 	private String weather;
 	private String name;
 	private String country;
-	private String info;
+	private String WikiInfo;
+	public static String SearchTags[] = {"museum", "café", "restaurant", "bar", "beach", "monument"};
+	public static final String appid = "867714155299b363bca7483aecae6458";
+
+	public City()
+	{
+		name = "";
+		country = "";
+		Museums = 0;
+		Cafes = 0;
+		Restaurants = 0;
+		Bars = 0;
+		Beaches = 0;
+		Monuments = 0;
+		lat = 0;
+		lon = 0;
+		weather = "";
+		WikiInfo = "";
+	}
 
 	public City(String name, String country)
 	{
@@ -31,7 +51,7 @@ public class City
 		lat = 0;
 		lon = 0;
 		weather = "";
-		info = "";
+		WikiInfo = "";
 	}
 
 	public City(String name, int museums, int cafes, int restaurants , int bars, int beaches, int monuments, double lat, double lon, String weather) {
@@ -47,14 +67,14 @@ public class City
 		this.weather = weather;
 	}
 
-	public String getInfo()
+	public String getWikiInfo()
 	{
-		return info;
+		return WikiInfo;
 	}
 
-	public void setInfo(String info)
+	public void setWikiInfo(String info)
 	{
-		this.info = info;
+		this.WikiInfo = info;
 	}
 
     public String getName()
@@ -176,20 +196,26 @@ public class City
 		this.weather = weather;
 	}
 
-	public static boolean ValidCity(String CityName) throws IOException
+	public static boolean ValidCity(String CityName)
 	{
-		//ArrayIndexOutOfBoundsException
 		String C[] = CityName.split(",");
+		String temp;
 		if (C.length != 2)
 		{
 			System.out.println("Wrong Format. Please type in: [City],[CountryInitials], without the brackets.\n");
 			return false;
 		}
 		ObjectMapper mapper = new ObjectMapper();
+		System.out.printf("CityName"+CityName);
 		try
 		{
-			OpenWeatherMap weather_obj = mapper.readValue(new URL("http://api.openweathermap.org/data/2.5/weather?q="+CityName+"&APPID="+OpenData.appid+""), OpenWeatherMap.class);
-			weather_obj.getMain();
+			OpenWeatherMap weather_obj = mapper.readValue(new URL("https://api.openweathermap.org/data/2.5/weather?q="+CityName+"&APPID="+appid+""), OpenWeatherMap.class);
+			temp = weather_obj.getSys().getCountry();
+			if (!temp.equalsIgnoreCase(C[1]))
+			{
+				System.out.println("Wrong city-country combination or country doesn't exist.\n");
+				return false;
+			}
 		}
 		catch (Exception FileNotFoundException)
 		{
@@ -205,6 +231,7 @@ public class City
 		MediaWiki mediaWiki_obj =  mapper.readValue(new URL("https://en.wikipedia.org/w/api.php?action=query&prop=extracts&titles="+CityName+"&format=json&formatversion=2"),MediaWiki.class);
 		String info = mediaWiki_obj.getQuery().getPages().get(0).getExtract();
 		info = info.replaceAll("\\<.*?\\>", "");
+		info = info.toLowerCase();
 		return info;
 	}
 
@@ -222,6 +249,21 @@ public class City
 		return 	list.size();
 	}
 
+	private void CityCoords(String CityName, String Country) throws IOException
+	{
+		ObjectMapper mapper = new ObjectMapper();
+		OpenWeatherMap weather_obj = mapper.readValue(new URL("http://api.openweathermap.org/data/2.5/weather?q="+CityName+","+Country+"&APPID="+appid+""), OpenWeatherMap.class);
+		lat = weather_obj.getCoord().getLat();
+		lon = weather_obj.getCoord().getLon();
+	}
+
+	private void CityWeather() throws IOException
+	{
+		ObjectMapper mapper = new ObjectMapper();
+		OpenWeatherMap weather_obj = mapper.readValue(new URL("http://api.openweathermap.org/data/2.5/weather?q="+name+","+country+"&APPID="+appid+""), OpenWeatherMap.class);
+		weather = weather_obj.getWeather().get(0).getMain();
+	}
+
 	public int CountWordResults (String CityInfo, String Pattern)
 	{
 		int index = CityInfo.indexOf(Pattern);
@@ -235,9 +277,49 @@ public class City
 		return count;
 	}
 
-	public void FillCityInfo (City c)
+	public ArrayList<City> AddCities(ArrayList<String> InputCities) throws InvocationTargetException, NoSuchMethodException, IllegalAccessException, IOException
 	{
+		ArrayList<City> temp = new ArrayList<City>();
+		int i;
+		for (i=0; i<= InputCities.size()-1; i++)
+		{
+			String C[] = InputCities.get(i).split(",");
+			temp.add(new City(C[0],C[1]));
+			FillCityInfo(temp.get(i));
+		}
+		return temp;
+	}
 
+	public void FillCityInfo (City c) throws IOException, NoSuchMethodException, InvocationTargetException, IllegalAccessException
+	{
+		WikiInfo = CityWikiInfo(c.name);
+		CityCoords(c.name,c.country);
+		CityWeather();
+		int i;
+		int count;
+		String text;
+		for (i = 0; i <= 5; i++)
+		{
+			text = Traveler.methods[i];
+			Method method = c.getClass().getMethod("set"+text, int.class);
+			count = CountWordResults(WikiInfo,SearchTags[i]);
+			method.invoke(c,count);
+		}
+	}
+
+	public static String FixCityName(String CityName) throws IOException
+	{
+		ObjectMapper mapper = new ObjectMapper();
+		OpenWeatherMap weather_obj = mapper.readValue(new URL("http://api.openweathermap.org/data/2.5/weather?q="+CityName+"&APPID="+appid+""), OpenWeatherMap.class);
+		return weather_obj.getName()+","+weather_obj.getSys().getCountry();
+	}
+
+	public void PrintCityInfo(City c)
+	{
+		System.out.printf(c.getName(),c.getCountry(),c.getLat(),c.getLon(),c.getMuseums(),c.getCafes(),c.getRestaurants(),c.getBars(),c.getBeaches(),c.getMonuments());
+		System.out.printf(c.getCountry());
+		System.out.println(c.getLat());
+		System.out.println(c.getLon());
+		System.out.println(c.getMuseums());
 	}
 }
-

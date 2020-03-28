@@ -1,31 +1,13 @@
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
 import weather.OpenWeatherMap;
 import java.lang.Math;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author it21870
- */
 public class Business extends Traveler
 {
     private double lat,lon;
     public static int MaxDistance = 20036;
-    private void SourceCityCoords(String SourceCityName) throws MalformedURLException, IOException
-    {
-        ObjectMapper mapper = new ObjectMapper();
-        OpenWeatherMap weather_obj = mapper.readValue(new URL("http://api.openweathermap.org/data/2.5/weather?q="+SourceCityName+"&APPID="+OpenData.appid+""), OpenWeatherMap.class);
-	    lat = weather_obj.getCoord().getLat();
-        lon = weather_obj.getCoord().getLon();
-    }
     
     private double distance(double lat1, double lon1, double lat2, double lon2) 
     {

@@ -7,11 +7,11 @@ import java.util.Scanner;
 import weather.OpenWeatherMap;
 import java.net.URL;
 
-public class Traveler {
+public class Traveler
+{
 	private String Name;
 	//public Boolean chosen[] = {false, false, false, false, false, false}; //array of available and user choice
-	public static String methods[] = {"Museum", "Cafes", "Restaurants", "Bars", "Beaches", "Monuments"};
-	public static String SearchTags[] = {"museum", "café", "restaurant", "bar", "beach", "monument"};
+	public static String methods[] = {"Museums", "Cafes", "Restaurants", "Bars", "Beaches", "Monuments"};
 	private int Age, current_lat, current_lon;
 	private ArrayList<City> CitiesArray;
 	private Boolean[] preferences;
@@ -28,8 +28,6 @@ public class Traveler {
 		preferences = new Boolean[] {false,false,false,false,false,false};
 	    traveler_counter++;
 	}
-
-	City c = new City("Athens", "GR");
 
 	public String getName() {
 		return Name;
@@ -71,6 +69,14 @@ public class Traveler {
 	public void setCitiesArray(ArrayList<City> citiesArray)
 	{
 		CitiesArray = citiesArray;
+	}
+
+	public int getTraveler_counter() {
+		return traveler_counter;
+	}
+
+	public void setTraveler_counter(int traveler_counter) {
+		Traveler.traveler_counter++;
 	}
 
 	public Boolean[] getPreferences()
@@ -119,6 +125,7 @@ public class Traveler {
 				}
 				if (valid)
 				{
+					city = City.FixCityName(city);
 					GivenCities.add(city);
 					System.out.println(city + " added"); //Add to arraylist if all valid
 				}
@@ -158,14 +165,6 @@ public class Traveler {
 		}
 	}
 
-	public int getTraveler_counter() {
-		return traveler_counter;
-	}
-
-	public void setTraveler_counter(int traveler_counter) {
-		Traveler.traveler_counter++;
-	}
-
 	public double Similarity(City c) throws InvocationTargetException, IllegalAccessException, NoSuchMethodException
 	{
 		Method method;
@@ -181,7 +180,7 @@ public class Traveler {
 				similars++;
 			}
 		}
-		return similars / c.CountDistinctWords(c.getInfo());
+		return similars / c.CountDistinctWords(c.getWikiInfo());
 	}
 
 	public City CompareCities(ArrayList<City> CitiesArray) throws IllegalAccessException, NoSuchMethodException, InvocationTargetException
@@ -200,7 +199,7 @@ public class Traveler {
 		return highest;
 	}
 
-	public City CompareCities(ArrayList<City> CitiesArray, boolean weather) throws IOException, IllegalAccessException, NoSuchMethodException, InvocationTargetException
+	public City CompareCities(ArrayList<City> CitiesArray, boolean weather) throws IllegalAccessException, NoSuchMethodException, InvocationTargetException //NEEDS REWORK!
 	{
 		int i;
 		if (weather)
@@ -208,7 +207,6 @@ public class Traveler {
 			ObjectMapper mapper = new ObjectMapper();
 			for (i = 0; i <= CitiesArray.size() - 1; i++)
 			{
-				OpenWeatherMap weather_obj = mapper.readValue(new URL("http://api.openweathermap.org/data/2.5/weather?q="+CitiesArray.get(i).getName()+"&APPID="+OpenData.appid +""), OpenWeatherMap.class);
 			}
 		}
 		return CompareCities(CitiesArray);
@@ -219,7 +217,7 @@ public class Traveler {
 		int choice = 0;
 		System.out.printf("Hello customer and welcome to our tourist agency app.\nThis app has been created to help you find the ideal travel destination ");
 		System.out.println("So let's start by answering some questions.\n");
-		System.out.printf("What's the purpose of your travel?\n1)I just want to travel the world.\n2)I am going for business trip.\n3)I just want to relax as a tourist.\n4)Exit Program");
+		System.out.printf("What's the purpose of your travel?\n1)I just want to travel the world.\n2)I am going for business trip.\n3)I just want to relax as a tourist.\n4)Exit Program\n");
 		while (choice < 1 || choice > 4)
 		{
 			choice = intScan();
