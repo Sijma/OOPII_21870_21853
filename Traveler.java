@@ -67,6 +67,10 @@ public class Traveler
 		this.preferences = preferences;
 	}
 
+	/**
+	 * Asks for input until a valid int is given
+	 * @return Valid int from input
+	 */
 	public static int intScan()
 	{
 		Scanner scanint = new Scanner(System.in);
@@ -80,6 +84,11 @@ public class Traveler
 		return result;
 	}
 
+	/**
+	 * Asks for city names until 'end' is given
+	 * @return ArrayList of all valid cities given by user
+	 * @throws IOException
+	 */
 	public ArrayList<String> InputCities() throws IOException
 	{
 		ArrayList<String> GivenCities = new ArrayList<String>(); //Making arraylist for all given cities.
@@ -120,6 +129,10 @@ public class Traveler
 		return GivenCities;
 	}
 
+	/**
+	 * change boolean array preferences depending on input
+	 * @throws IOException
+	 */
 	public void PreferenceTags() throws IOException
 	{
 		int i = 0;
@@ -147,6 +160,14 @@ public class Traveler
 		}
 	}
 
+	/**
+	 *
+	 * @param c City that we want to compare with traveler
+	 * @return Similarity between traveler's variables and city in
+	 * @throws InvocationTargetException
+	 * @throws IllegalAccessException
+	 * @throws NoSuchMethodException
+	 */
 	public double Similarity(City c) throws InvocationTargetException, IllegalAccessException, NoSuchMethodException
 	{
 		Method method;
@@ -170,6 +191,14 @@ public class Traveler
 		return result;
 	}
 
+	/**
+	 *
+	 * @param CitiesArray List of cities to compare
+	 * @return City obj with highest similarity result
+	 * @throws IllegalAccessException
+	 * @throws NoSuchMethodException
+	 * @throws InvocationTargetException
+	 */
 	public City CompareCities(ArrayList<City> CitiesArray) throws IllegalAccessException, NoSuchMethodException, InvocationTargetException
 	{
 		int IndexOfHighest = -1;
@@ -188,11 +217,20 @@ public class Traveler
 		return CitiesArray.get(IndexOfHighest);
 	}
 
-	public City CompareCities(ArrayList<City> CitiesArray, boolean weather) throws IllegalAccessException, NoSuchMethodException, InvocationTargetException
+	/**
+	 *
+	 * @param CitiesArray List of cities to compare
+	 * @param rain Boolean whether or not to consider cities with Rain weather
+	 * @return
+	 * @throws IllegalAccessException
+	 * @throws NoSuchMethodException
+	 * @throws InvocationTargetException
+	 */
+	public City CompareCities(ArrayList<City> CitiesArray, boolean rain) throws IllegalAccessException, NoSuchMethodException, InvocationTargetException
 	{
 		int i;
 		String temp;
-		if (weather)
+		if (rain)
 		{
 			for (i = 0; i <= CitiesArray.size() - 1; i++)
 			{
@@ -207,6 +245,10 @@ public class Traveler
 		return CompareCities(CitiesArray);
 	}
 
+	/**
+	 * Prints a menu for the user and asks for input until a valid option is given
+	 * @return Valid option from the menu to 'execute'
+	 */
 	public static int MenuOption()
 	{
 		int choice = 0;
@@ -220,6 +262,10 @@ public class Traveler
 		return choice;
 	}
 
+	/**
+	 * Prints name and country of given city obj
+	 * @param c City obj to get info from
+	 */
 	public void PrintCityInfo(City c)
 	{
 		System.out.printf("Your Suggested city is: "+c.getName()+" in "+c.getCountry()+"!\n\n");
