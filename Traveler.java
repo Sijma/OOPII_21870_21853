@@ -152,6 +152,7 @@ public class Traveler
 		Method method;
 		int i;
 		int temp;
+		int DistinctWords;
 		double result;
 		int similars = 0;
 		for (i = 0; i <= 5; i++)
@@ -163,7 +164,9 @@ public class Traveler
 				similars++;
 			}
 		}
-		result = (similars *1.0)/ c.CountDistinctWords(c.getWikiInfo());
+		DistinctWords = c.CountDistinctWords(c.getWikiInfo());
+		result = (similars *1.0)/ DistinctWords;
+		result = result * 1000;
 		return result;
 	}
 

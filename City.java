@@ -215,6 +215,7 @@ public class City
 			if (!temp.equalsIgnoreCase(C[1]))
 			{
 				System.out.println("Country doesn't exist.\n");
+				System.out.println("Did you mean: "+temp+"?\n");
 				return false;
 			}
 		}

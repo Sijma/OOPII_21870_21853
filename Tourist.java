@@ -22,6 +22,7 @@ public class Tourist extends Traveler
 			}
 		}
 		result = (similars*matching*1.0)/City.CountTotalWords(c.getWikiInfo());
+		result = result *100;
 		return result;
   	}
 }
