@@ -1,6 +1,8 @@
 import com.fasterxml.jackson.databind.ObjectMapper;
 import weather.OpenWeatherMap;
 import wikipedia.MediaWiki;
+
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -213,7 +215,7 @@ public class City
 			temp = weather_obj.getSys().getCountry();
 			if (!temp.equalsIgnoreCase(C[1]))
 			{
-				System.out.println("Wrong city-country combination or country doesn't exist.\n");
+				System.out.println("Country doesn't exist.\n");
 				return false;
 			}
 		}
@@ -231,6 +233,19 @@ public class City
 		MediaWiki mediaWiki_obj =  mapper.readValue(new URL("https://en.wikipedia.org/w/api.php?action=query&prop=extracts&titles="+CityName+"&format=json&formatversion=2"),MediaWiki.class);
 		String info = mediaWiki_obj.getQuery().getPages().get(0).getExtract();
 		info = info.replaceAll("\\<.*?\\>", "");
+		if (CountWordResults(info,"disambiguation") > 0)
+		{
+			try
+			{
+				mediaWiki_obj =  mapper.readValue(new URL("https://en.wikipedia.org/w/api.php?action=query&prop=extracts&titles="+CityName+"%20City&format=json&formatversion=2"),MediaWiki.class);
+				info = mediaWiki_obj.getQuery().getPages().get(0).getExtract();
+			}
+			catch (Exception FileNotFoundException)
+			{
+				mediaWiki_obj =  mapper.readValue(new URL("https://en.wikipedia.org/w/api.php?action=query&prop=extracts&titles="+CityName+"&format=json&formatversion=2"),MediaWiki.class);
+				info = mediaWiki_obj.getQuery().getPages().get(0).getExtract();
+			}
+		}
 		info = info.toLowerCase();
 		return info;
 	}
@@ -249,7 +264,13 @@ public class City
 		return 	list.size();
 	}
 
-	private void CityCoords(String CityName, String Country) throws IOException
+	public static int CountTotalWords(String str) {
+
+		String s[]=str.split(" ");
+		return 	s.length;
+	}
+
+	public void CityCoords(String CityName, String Country) throws IOException
 	{
 		ObjectMapper mapper = new ObjectMapper();
 		OpenWeatherMap weather_obj = mapper.readValue(new URL("http://api.openweathermap.org/data/2.5/weather?q="+CityName+","+Country+"&APPID="+appid+""), OpenWeatherMap.class);
@@ -312,14 +333,5 @@ public class City
 		ObjectMapper mapper = new ObjectMapper();
 		OpenWeatherMap weather_obj = mapper.readValue(new URL("http://api.openweathermap.org/data/2.5/weather?q="+CityName+"&APPID="+appid+""), OpenWeatherMap.class);
 		return weather_obj.getName()+","+weather_obj.getSys().getCountry();
-	}
-
-	public void PrintCityInfo(City c)
-	{
-		System.out.printf(c.getName(),c.getCountry(),c.getLat(),c.getLon(),c.getMuseums(),c.getCafes(),c.getRestaurants(),c.getBars(),c.getBeaches(),c.getMonuments());
-		System.out.printf(c.getCountry());
-		System.out.println(c.getLat());
-		System.out.println(c.getLon());
-		System.out.println(c.getMuseums());
 	}
 }

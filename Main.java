@@ -1,10 +1,7 @@
-import com.fasterxml.jackson.databind.ObjectMapper;
-import weather.OpenWeatherMap;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.net.URL;
 
 public class Main
 {
@@ -16,6 +13,7 @@ public class Main
 		int age;
 		ArrayList<String> TempCityNames = new ArrayList<String>();
 		ArrayList<City> TempCityObjectsList = new ArrayList<City>();
+		City BestCity;
 		Scanner scan = new Scanner(System.in);
 		while (choice != 4)
 		{
@@ -54,7 +52,6 @@ public class Main
 				AllTravelers.get(index).setAge(age);
 				TempCityNames = AllTravelers.get(index).InputCities();
 				System.out.printf("1");
-				//TempCityObjectsList = (TempCityNames);
 				for (i=0;i<=TempCityNames.size()-1;i++)
 				{
 					String C[] = TempCityNames.get(i).split(",");
@@ -64,10 +61,15 @@ public class Main
 				System.out.printf("2");
 				AllTravelers.get(index).setCitiesArray(TempCityObjectsList);
 				System.out.printf("3");
-				for (i=0;i<=AllTravelers.get(index).getCitiesArray().size()-1;i++)
-				{
-					AllTravelers.get(index).getCitiesArray().get(i).PrintCityInfo(AllTravelers.get(index).getCitiesArray().get(i));
-				}
+				AllTravelers.get(index).PreferenceTags();
+				System.out.printf("4");
+				System.out.printf("index: "+index);
+				TempCityObjectsList = AllTravelers.get(index).getCitiesArray();
+				System.out.printf("5");
+				BestCity = AllTravelers.get(index).CompareCities(TempCityObjectsList);
+				System.out.printf("6");
+				AllTravelers.get(index).PrintCityInfo(BestCity);
+				System.out.printf("7");
 			}
 		}
 	}

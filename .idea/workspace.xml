@@ -6,14 +6,12 @@
       <change beforePath="$PROJECT_DIR$/Business.java" beforeDir="false" afterPath="$PROJECT_DIR$/Business.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/City.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenData.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tourist.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tourist.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Traveler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Traveler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOPII_21870_21853/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Business.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Business.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/City.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOPII_21870_21853/City.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/OpenData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOPII_21870_21853/OpenData.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Tourist.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Tourist.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Traveler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Traveler.class" afterDir="false" />
     </list>
@@ -163,7 +161,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585153615873</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="friday">
+      <created>1585393870310</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1585393870311</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -187,7 +192,8 @@
     <MESSAGE value="Similarity_final" />
     <MESSAGE value="monday" />
     <MESSAGE value="Tuesday draft" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tuesday draft" />
+    <MESSAGE value="friday" />
+    <option name="LAST_COMMIT_MESSAGE" value="friday" />
   </component>
   <component name="WindowStateProjectService">
     <state x="555" y="179" width="800" height="676" key="#Notifications" timestamp="1585125850041">
@@ -202,20 +208,20 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="422" y="168" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1032/1919.0.1920.1080@0.0.1920.1032" timestamp="1583235416990" />
-    <state x="1124" y="209" key="#com.intellij.ide.util.MemberChooser" timestamp="1585150894084">
+    <state x="1124" y="209" key="#com.intellij.ide.util.MemberChooser" timestamp="1585395295476">
       <screen x="0" y="0" width="1920" height="1035" />
     </state>
-    <state x="1124" y="209" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1035/1920.0.1920.1080@0.0.1920.1035" timestamp="1585150894084" />
+    <state x="1124" y="209" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1035/1920.0.1920.1080@0.0.1920.1035" timestamp="1585395295476" />
     <state x="810" y="406" width="300" height="225" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1583427391739">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="810" y="406" width="300" height="225" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1032/1919.0.1920.1080@0.0.1920.1032" timestamp="1583427391739" />
-    <state x="601" y="107" key="CommitChangelistDialog2" timestamp="1585153615767">
+    <state x="601" y="107" key="CommitChangelistDialog2" timestamp="1585393870120">
       <screen x="0" y="0" width="1920" height="1035" />
     </state>
     <state x="601" y="107" key="CommitChangelistDialog2/0.0.1920.1032/1919.0.1920.1080@0.0.1920.1032" timestamp="1583432377215" />
     <state x="601" y="107" key="CommitChangelistDialog2/0.0.1920.1032/1920.0.1920.1080@0.0.1920.1032" timestamp="1583624541373" />
-    <state x="601" y="107" key="CommitChangelistDialog2/0.0.1920.1035/1920.0.1920.1080@0.0.1920.1035" timestamp="1585153615767" />
+    <state x="601" y="107" key="CommitChangelistDialog2/0.0.1920.1035/1920.0.1920.1080@0.0.1920.1035" timestamp="1585393870120" />
     <state x="190" y="84" key="DiffContextDialog" timestamp="1583429752007">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
@@ -230,26 +236,26 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="729" y="379" key="Github.CreatePullRequestDialog/0.0.1920.1032/1919.0.1920.1080@0.0.1920.1032" timestamp="1583235663188" />
-    <state width="1874" height="273" key="GridCell.Tab.0.bottom" timestamp="1585336393277">
+    <state width="1874" height="273" key="GridCell.Tab.0.bottom" timestamp="1585406169967">
       <screen x="0" y="0" width="1920" height="1035" />
     </state>
     <state width="1874" height="271" key="GridCell.Tab.0.bottom/0.0.1920.1032/1919.0.1920.1080@0.0.1920.1032" timestamp="1583426847789" />
-    <state width="1874" height="273" key="GridCell.Tab.0.bottom/0.0.1920.1035/1920.0.1920.1080@0.0.1920.1035" timestamp="1585336393277" />
-    <state width="1874" height="273" key="GridCell.Tab.0.center" timestamp="1585336393277">
+    <state width="1874" height="273" key="GridCell.Tab.0.bottom/0.0.1920.1035/1920.0.1920.1080@0.0.1920.1035" timestamp="1585406169967" />
+    <state width="1874" height="273" key="GridCell.Tab.0.center" timestamp="1585406169967">
       <screen x="0" y="0" width="1920" height="1035" />
     </state>
     <state width="1874" height="271" key="GridCell.Tab.0.center/0.0.1920.1032/1919.0.1920.1080@0.0.1920.1032" timestamp="1583426847789" />
-    <state width="1874" height="273" key="GridCell.Tab.0.center/0.0.1920.1035/1920.0.1920.1080@0.0.1920.1035" timestamp="1585336393277" />
-    <state width="1874" height="273" key="GridCell.Tab.0.left" timestamp="1585336393277">
+    <state width="1874" height="273" key="GridCell.Tab.0.center/0.0.1920.1035/1920.0.1920.1080@0.0.1920.1035" timestamp="1585406169967" />
+    <state width="1874" height="273" key="GridCell.Tab.0.left" timestamp="1585406169967">
       <screen x="0" y="0" width="1920" height="1035" />
     </state>
     <state width="1874" height="271" key="GridCell.Tab.0.left/0.0.1920.1032/1919.0.1920.1080@0.0.1920.1032" timestamp="1583426847789" />
-    <state width="1874" height="273" key="GridCell.Tab.0.left/0.0.1920.1035/1920.0.1920.1080@0.0.1920.1035" timestamp="1585336393277" />
-    <state width="1874" height="273" key="GridCell.Tab.0.right" timestamp="1585336393277">
+    <state width="1874" height="273" key="GridCell.Tab.0.left/0.0.1920.1035/1920.0.1920.1080@0.0.1920.1035" timestamp="1585406169967" />
+    <state width="1874" height="273" key="GridCell.Tab.0.right" timestamp="1585406169967">
       <screen x="0" y="0" width="1920" height="1035" />
     </state>
     <state width="1874" height="271" key="GridCell.Tab.0.right/0.0.1920.1032/1919.0.1920.1080@0.0.1920.1032" timestamp="1583426847789" />
-    <state width="1874" height="273" key="GridCell.Tab.0.right/0.0.1920.1035/1920.0.1920.1080@0.0.1920.1035" timestamp="1585336393277" />
+    <state width="1874" height="273" key="GridCell.Tab.0.right/0.0.1920.1035/1920.0.1920.1080@0.0.1920.1035" timestamp="1585406169967" />
     <state x="676" y="228" key="MultipleFileMergeDialog" timestamp="1583613313768">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
@@ -322,74 +328,5 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="730" y="297" key="svn4idea.import.options/0.0.1920.1032/1919.0.1920.1080@0.0.1920.1032" timestamp="1583235894183" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Traveler.java</url>
-          <line>212</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Traveler.java</url>
-          <line>202</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Traveler.java</url>
-          <line>203</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Traveler.java</url>
-          <line>204</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Traveler.java</url>
-          <line>205</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Traveler.java</url>
-          <line>206</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Traveler.java</url>
-          <line>207</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Traveler.java</url>
-          <line>208</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Traveler.java</url>
-          <line>210</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Traveler.java</url>
-          <line>209</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Traveler.java</url>
-          <line>211</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/Traveler.java</url>
-          <line>201</line>
-          <properties class="Traveler" method="CompareCities">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
