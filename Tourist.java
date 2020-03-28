@@ -2,40 +2,34 @@
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author it21853
- */
 public class Tourist extends Traveler
 {
- 
- @Override
-  public double Similarity(City c)
-  throws InvocationTargetException, IllegalAccessException, NoSuchMethodException
+	@Override
+	public double Similarity(City c) throws InvocationTargetException, IllegalAccessException, NoSuchMethodException
 	{
-		java.lang.reflect.Method method;
+		System.out.printf("similar0\n");
 		int i,matching=0;
-		int temp,total=0;
+		int temp;
+		double result;
 		int similars = 0;
-                
 		for (i = 0; i <= 5; i++)
 		{
-			Method m = c.getClass().getMethod("get"+ tags[i]);
+			System.out.printf("similar1\n");
+			Method m = c.getClass().getMethod("get"+methods[i]);
 			temp = (int) m.invoke(c);
-                        total = total + temp;
-			if (temp >= 0 && chosen[i])
+			if (temp > 0 && getPreferences()[i])
 			{
+				System.out.printf(methods[i]);
+				System.out.printf("similar2\n");
 				similars++;
-                                matching = matching + temp;
-                        }
+				System.out.print("similars: "+similars);
+				matching = matching + temp;
+				System.out.print("matching: "+matching);
+			}
 		}
-                return (similars*matching)/total;
-  }
+		System.out.printf("similar3\n");
+		result = (similars*matching*1.0)/City.CountTotalWords(c.getWikiInfo());
+		System.out.printf("Result: "+result);
+		return result;
+  	}
 }
-
