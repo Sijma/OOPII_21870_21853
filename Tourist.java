@@ -4,6 +4,14 @@ import java.lang.reflect.Method;
 
 public class Tourist extends Traveler
 {
+	/**
+	 *
+	 * @param c City that we want to compare with traveler
+	 * @return Similarity between tourist's input and city's info
+	 * @throws InvocationTargetException
+	 * @throws IllegalAccessException
+	 * @throws NoSuchMethodException
+	 */
 	@Override
 	public double Similarity(City c) throws InvocationTargetException, IllegalAccessException, NoSuchMethodException
 	{
@@ -22,6 +30,7 @@ public class Tourist extends Traveler
 			}
 		}
 		result = (similars*matching*1.0)/City.CountTotalWords(c.getWikiInfo());
+		result = result *100;
 		return result;
   	}
 }

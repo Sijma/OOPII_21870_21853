@@ -10,26 +10,20 @@ public class Business extends Traveler
     private double lat,lon;
     public static int MaxDistance = 20036;
 
-    public double getLat()
-    {
-        return lat;
-    }
+    public double getLat() { return lat; }
 
-    public void setLat(double lat)
-    {
-        this.lat = lat;
-    }
+    public void setLat(double lat) { this.lat = lat; }
 
-    public double getLon()
-    {
-        return lon;
-    }
+    public double getLon() { return lon; }
 
-    public void setLon(double lon)
-    {
-        this.lon = lon;
-    }
+    public void setLon(double lon) { this.lon = lon; }
 
+    /**
+     *
+     * @param latc Latitude of city to measure distance
+     * @param lonc Longitude of city to measure distance
+     * @return distance between given city's and instance coordinates
+     */
     private double distance(double latc, double lonc)
     {
 	    if ((lat == latc) && (lon == lonc))
@@ -46,11 +40,21 @@ public class Business extends Traveler
                 return (dist);
             }
     }
+
+    /**
+     *
+     * @param x number to calculate log base 2 off
+     * @return result of log base 2 of x
+     */
     public static double log2(double x)
     {
         return (Math.log(x) / Math.log(2));
     }
 
+    /**
+     * Asks user's current city and sets instance latitude and longitude from given city
+     * @throws IOException
+     */
     public void PreferenceTags() throws IOException
     {
         String CityName = "";
@@ -68,6 +72,11 @@ public class Business extends Traveler
         lon = weather_obj.getCoord().getLon();
     }
 
+    /**
+     *
+     * @param c City that we want to compare with traveler
+     * @return Similarity depending on distance
+     */
     @Override
     public double Similarity(City c)
     {

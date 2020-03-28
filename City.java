@@ -74,130 +74,81 @@ public class City
 		return WikiInfo;
 	}
 
-	public void setWikiInfo(String info)
-	{
-		this.WikiInfo = info;
-	}
+	public void setWikiInfo(String info) { this.WikiInfo = info; }
 
-    public String getName()
-	{
-        return name;
-    }
+    public String getName() { return name; }
 
-    public void setName(String name)
-	{
-        this.name = name;
-    }
+    public void setName(String name) { this.name = name; }
 
-    public int getBeaches()
-	{
-        return Beaches;
-    }
+    public int getBeaches() { return Beaches; }
 
-    public void setBeaches(int Beaches)
-	{
-        this.Beaches = Beaches;
-    }
+    public void setBeaches(int Beaches) { this.Beaches = Beaches; }
 
-    public int getMonuments()
-	{
-        return Monuments;
-    }
+    public int getMonuments() { return Monuments; }
 
-    public void setMonuments(int Monuments)
-	{
-        this.Monuments = Monuments;
-    }
+    public void setMonuments(int Monuments) { this.Monuments = Monuments; }
 
-	public String getCountry()
-	{
-		return country;
-	}
-	/**
-	 * @return the museums
-	 */
+	public String getCountry() { return country; }
+
 	public int getMuseums() {
 		return Museums;
 	}
-	/**
-	 * @param museums the museums to set
-	 */
+
 	public void setMuseums(int museums) {
 		Museums = museums;
 	}
-	/**
-	 * @return the cafes
-	 */
+
 	public int getCafes() {
 		return Cafes;
 	}
-	/**
-	 * @param cafes the cafes to set
-	 */
+
 	public void setCafes(int cafes) {
 		Cafes = cafes;
 	}
-	/**
-	 * @return the restaurants
-	 */
+
 	public int getRestaurants() {
 		return Restaurants;
 	}
-	/**
-	 * @param restaurants the restaurants to set
-	 */
+
 	public void setRestaurants(int restaurants) {
 		Restaurants = restaurants;
 	}
-	/**
-	 * @return the bars
-	 */
+
 	public int getBars() {
 		return Bars;
 	}
-	/**
-	 * @param bars the bars to set
-	 */
+
 	public void setBars(int bars) {
 		Bars = bars;
 	}
-	/**
-	 * @return the lan
-	 */
-	public double getLat() {
-		return lat;
-	}
-	/**
-	 * @param lat the lan to set
-	 */
+
+	public double getLat() { return lat; }
+
 	public void setLat(double lat) {
 		this.lat = lat;
 	}
-	/**
-	 * @return the lon
-	 */
+
 	public double getLon() {
 		return lon;
 	}
-	/**
-	 * @param lon the lon to set
-	 */
+
 	public void setLon(double lon) {
 		this.lon = lon;
 	}
-	/**
-	 * @return the weather
-	 */
+
 	public String getWeather() {
 		return weather;
 	}
-	/**
-	 * @param weather the weather to set
-	 */
+
 	public void setWeather(String weather) {
 		this.weather = weather;
 	}
 
+	/**
+	 *
+	 * @param CityName String to check validity of as existing city
+	 * @return boolean depending on valid or not
+	 */
 	public static boolean ValidCity(String CityName)
 	{
 		String C[] = CityName.split(",");
@@ -215,6 +166,7 @@ public class City
 			if (!temp.equalsIgnoreCase(C[1]))
 			{
 				System.out.println("Country doesn't exist.\n");
+				System.out.println("Did you mean: "+temp+"?\n");
 				return false;
 			}
 		}
@@ -226,6 +178,12 @@ public class City
 		return true;
 	}
 
+	/**
+	 *
+	 * @param CityName Name of city to look for wiki info
+	 * @return String of full wiki result of given city
+	 * @throws IOException
+	 */
 	public String CityWikiInfo(String CityName) throws IOException
 	{
 		ObjectMapper mapper = new ObjectMapper();
@@ -249,9 +207,14 @@ public class City
 		return info;
 	}
 
-	public int CountDistinctWords(String CityInfo)
+	/**
+	 *
+	 * @param str String to count distinct words in
+	 * @return amount of distinct words
+	 */
+	public int CountDistinctWords(String str)
 	{
-		String s[]=CityInfo.split(" ");
+		String s[]=str.split(" ");
 		ArrayList<String> list=new ArrayList<String>();
 		for (int i = 1; i < s.length; i++)
 		{
@@ -263,20 +226,34 @@ public class City
 		return 	list.size();
 	}
 
+	/**
+	 *
+	 * @param str string to count total words in
+	 * @return amount of total words
+	 */
 	public static int CountTotalWords(String str) {
 
 		String s[]=str.split(" ");
 		return 	s.length;
 	}
 
-	public void CityCoords(String CityName, String Country) throws IOException
+	/**
+	 * sets given city's coordinates
+	 * @param c City obj to find and set coordinates for
+	 * @throws IOException
+	 */
+	public void CityCoords(City c) throws IOException
 	{
 		ObjectMapper mapper = new ObjectMapper();
-		OpenWeatherMap weather_obj = mapper.readValue(new URL("http://api.openweathermap.org/data/2.5/weather?q="+CityName+","+Country+"&APPID="+appid+""), OpenWeatherMap.class);
+		OpenWeatherMap weather_obj = mapper.readValue(new URL("http://api.openweathermap.org/data/2.5/weather?q="+c.name+","+c.country+"&APPID="+appid+""), OpenWeatherMap.class);
 		lat = weather_obj.getCoord().getLat();
 		lon = weather_obj.getCoord().getLon();
 	}
 
+	/**
+	 * Sets weather for instance
+	 * @throws IOException
+	 */
 	private void CityWeather() throws IOException
 	{
 		ObjectMapper mapper = new ObjectMapper();
@@ -284,36 +261,37 @@ public class City
 		weather = weather_obj.getWeather().get(0).getMain();
 	}
 
-	public int CountWordResults (String CityInfo, String Pattern)
+	/**
+	 *
+	 * @param str String to search in
+	 * @param Pattern Pattern to look for in str
+	 * @return Amount of times Pattern appears in str
+	 */
+	public int CountWordResults (String str, String Pattern)
 	{
-		int index = CityInfo.indexOf(Pattern);
+		int index = str.indexOf(Pattern);
 		int count = 0;
 		while (index != -1)
 		{
 			count++;
-			CityInfo = CityInfo.substring(index + 1);
-			index = CityInfo.indexOf(Pattern);
+			str = str.substring(index + 1);
+			index = str.indexOf(Pattern);
 		}
 		return count;
 	}
 
-	public ArrayList<City> AddCities(ArrayList<String> InputCities) throws InvocationTargetException, NoSuchMethodException, IllegalAccessException, IOException
-	{
-		ArrayList<City> temp = new ArrayList<City>();
-		int i;
-		for (i=0; i<= InputCities.size()-1; i++)
-		{
-			String C[] = InputCities.get(i).split(",");
-			temp.add(new City(C[0],C[1]));
-			FillCityInfo(temp.get(i));
-		}
-		return temp;
-	}
-
+	/**
+	 * Uses other methods to set all variables for given object
+	 * @param c City obj to set info and variables for
+	 * @throws IOException
+	 * @throws NoSuchMethodException
+	 * @throws InvocationTargetException
+	 * @throws IllegalAccessException
+	 */
 	public void FillCityInfo (City c) throws IOException, NoSuchMethodException, InvocationTargetException, IllegalAccessException
 	{
 		WikiInfo = CityWikiInfo(c.name);
-		CityCoords(c.name,c.country);
+		CityCoords(c);
 		CityWeather();
 		int i;
 		int count;

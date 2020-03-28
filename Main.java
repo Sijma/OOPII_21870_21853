@@ -5,7 +5,57 @@ import java.util.Scanner;
 
 public class Main
 {
+	/**
+	 *
+	 * @param array in which we will find the position of the max value
+	 * @return index of largest element in given array
+	 */
+	public static int getIndexOfLargest( double[] array )
+	{
+		if ( array == null || array.length == 0 ) return -1; // null or empty
+
+		int largest = 0;
+		for ( int i = 1; i < array.length; i++ )
+		{
+			if ( array[i] > array[largest] ) largest = i;
+		}
+		return largest; // position of the first largest found
+	}
+
+	/**
+	 * Prints name of traveler with highest similarity to a set city
+	 * @param AllTravelers List of all registered travelers during runtime
+	 * @throws InvocationTargetException
+	 * @throws IllegalAccessException
+	 * @throws NoSuchMethodException
+	 * @throws IOException
+	 */
+	public static void goldenTicket(ArrayList<Traveler> AllTravelers) throws InvocationTargetException, IllegalAccessException, NoSuchMethodException, IOException
+	{
+		City c = new City("New%20York%20City", "US");
+		c.FillCityInfo(c);
+		int i ;
+		int maxpos;
+		double[] sim = new double[Traveler.traveler_counter];
+		for( i=0;i<=Traveler.traveler_counter-1;i++)
+		{
+			sim[i]=AllTravelers.get(i).Similarity(c);
+			System.out.print(sim[i]);
+		}
+		maxpos= getIndexOfLargest(sim);
+		System.out.println("The winner of the the free GOLDEN TICKET of our travel agency is: "+AllTravelers.get(maxpos).getName());
+	}
+
 	public static ArrayList<Traveler> AllTravelers = new ArrayList<Traveler>();
+
+	/**
+	 * Handles user input and method calling
+	 * @param args
+	 * @throws IOException
+	 * @throws NoSuchMethodException
+	 * @throws IllegalAccessException
+	 * @throws InvocationTargetException
+	 */
 	public static void main(String[] args) throws IOException, NoSuchMethodException, IllegalAccessException, InvocationTargetException
 	{
 		int choice = 0;
@@ -64,5 +114,6 @@ public class Main
 				AllTravelers.get(index).PrintCityInfo(BestCity);
 			}
 		}
+		goldenTicket(AllTravelers);
 	}
 }
