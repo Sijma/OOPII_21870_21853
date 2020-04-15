@@ -1,7 +1,6 @@
 import com.fasterxml.jackson.databind.ObjectMapper;
 import weather.OpenWeatherMap;
 import wikipedia.MediaWiki;
-
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -328,8 +327,10 @@ public class City
 		return weather_obj.getName()+","+weather_obj.getSys().getCountry();
 	}
 
-	public boolean equals(City c)
+	@Override
+	public boolean equals(Object o)
 	{
+		City c = (City) o;
 		if (c.name.equalsIgnoreCase(this.name))
 		{
 			System.out.printf("City exists in database, good.");

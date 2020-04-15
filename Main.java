@@ -83,44 +83,43 @@ public class Main
 			{
 				AllTravelers.add(new Tourist());
 			}
-			else
+			else if(choice==4)
 			{
 				break;
 			}
-			if (choice !=4)
+
+			index = Traveler.traveler_counter - 1;
+			System.out.print("What is your name?\n");
+			AllTravelers.get(index).setName(scan.next());
+			System.out.print("How old are you?\n");
+			age = Traveler.intScan();
+			while (age <= 0)
 			{
-				index = Traveler.traveler_counter - 1;
-				System.out.printf("What is your name?\n");
-				AllTravelers.get(index).setName(scan.next());
-				System.out.printf("How old are you?\n");
+				System.out.print("Invalid input. Please try again\n");
 				age = Traveler.intScan();
-				while (age <= 0)
-				{
-					System.out.printf("Invalid input. Please try again\n");
-					age = Traveler.intScan();
-				}
-				int i;
-				AllTravelers.get(index).setAge(age);
-				TempCityNames = AllTravelers.get(index).InputCities();
-				int tempIndex;
-				for (i=0;i<=TempCityNames.size()-1;i++)
-				{
-					String C[] = TempCityNames.get(i).split(",");
-					TempCityObjectsList.add(new City(C[0],C[1]));
-					tempIndex = City.CityExists(TempCityObjectsList.get(i));
-					if (tempIndex != -1)
-					{
-						TempCityObjectsList.remove(i);
-						TempCityObjectsList.add(AllCities.get(tempIndex));
-					}
-					else TempCityObjectsList.get(i).FillCityInfo(TempCityObjectsList.get(i));
-				}
-				AllTravelers.get(index).setCitiesArray(TempCityObjectsList);
-				AllTravelers.get(index).PreferenceTags();
-				TempCityObjectsList = AllTravelers.get(index).getCitiesArray();
-				BestCity = AllTravelers.get(index).CompareCities(TempCityObjectsList);
-				AllTravelers.get(index).PrintCityInfo(BestCity);
 			}
+			int i;
+			AllTravelers.get(index).setAge(age);
+			TempCityNames = AllTravelers.get(index).InputCities();
+			int tempIndex;
+			for (i=0;i<=TempCityNames.size()-1;i++)
+			{
+				String C[] = TempCityNames.get(i).split(",");
+				TempCityObjectsList.add(new City(C[0],C[1]));
+				tempIndex = City.CityExists(TempCityObjectsList.get(i));
+				if (tempIndex != -1)
+				{
+					TempCityObjectsList.remove(i);
+					TempCityObjectsList.add(AllCities.get(tempIndex));
+				}
+				else TempCityObjectsList.get(i).FillCityInfo(TempCityObjectsList.get(i));
+			}
+			AllTravelers.get(index).setCitiesArray(TempCityObjectsList);
+			AllTravelers.get(index).PreferenceTags();
+			TempCityObjectsList = AllTravelers.get(index).getCitiesArray();
+			BestCity = AllTravelers.get(index).CompareCities(TempCityObjectsList);
+			AllTravelers.get(index).PrintCityInfo(BestCity);
+			if (Traveler.travelerExists(AllTravelers.get(index))) AllTravelers.remove(index);
 		}
 		goldenTicket(AllTravelers);
 	}

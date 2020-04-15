@@ -19,8 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="94efbb5f-e699-47c0-ae03-d03b605b2af4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="94efbb5f-e699-47c0-ae03-d03b605b2af4" name="Default Changelist" comment="added cities to collection">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/City.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main.java" afterDir="false" />
@@ -202,7 +201,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585413441349</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="added cities to collection">
+      <created>1586945987377</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1586945987377</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -228,7 +234,8 @@
     <MESSAGE value="friday" />
     <MESSAGE value="Saturday" />
     <MESSAGE value="Removed debug messages" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed debug messages" />
+    <MESSAGE value="added cities to collection" />
+    <option name="LAST_COMMIT_MESSAGE" value="added cities to collection" />
   </component>
   <component name="WindowStateProjectService">
     <state x="555" y="179" width="800" height="676" key="#Notifications" timestamp="1585125850041">
@@ -243,11 +250,11 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="422" y="168" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1032/1919.0.1920.1080@0.0.1920.1032" timestamp="1583235416990" />
-    <state x="1124" y="210" key="#com.intellij.ide.util.MemberChooser" timestamp="1586938318768">
+    <state x="1078" y="208" key="#com.intellij.ide.util.MemberChooser" timestamp="1586965839604">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1124" y="209" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1035/1920.0.1920.1080@0.0.1920.1035" timestamp="1585395295476" />
-    <state x="1124" y="210" key="#com.intellij.ide.util.MemberChooser/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1586938318768" />
+    <state x="1078" y="208" key="#com.intellij.ide.util.MemberChooser/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1586965839604" />
     <state x="810" y="406" width="300" height="225" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1583427391739">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
@@ -313,12 +320,13 @@
     <state x="446" y="87" key="SettingsEditor/0.0.1920.1032/1920.0.1920.1080@0.0.1920.1032" timestamp="1583624164519" />
     <state x="446" y="87" width="1024" height="844" key="SettingsEditor/0.0.1920.1035/1920.0.1920.1080@0.0.1920.1035" timestamp="1585127064165" />
     <state x="446" y="87" key="SettingsEditor/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1586937024579" />
-    <state x="558" y="247" key="Vcs.Push.Dialog.v2" timestamp="1585416499222">
-      <screen x="0" y="0" width="1920" height="1035" />
+    <state x="558" y="248" key="Vcs.Push.Dialog.v2" timestamp="1586965300066">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="558" y="246" key="Vcs.Push.Dialog.v2/0.0.1920.1032/1919.0.1920.1080@0.0.1920.1032" timestamp="1583429981607" />
     <state x="558" y="246" key="Vcs.Push.Dialog.v2/0.0.1920.1032/1920.0.1920.1080@0.0.1920.1032" timestamp="1583623887825" />
     <state x="558" y="247" key="Vcs.Push.Dialog.v2/0.0.1920.1035/1920.0.1920.1080@0.0.1920.1035" timestamp="1585416499222" />
+    <state x="558" y="248" key="Vcs.Push.Dialog.v2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1586965300066" />
     <state x="98" y="95" width="1724" height="839" key="com.intellij.dvcs.ui.CompareBranchesDialog" timestamp="1583238530887">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>

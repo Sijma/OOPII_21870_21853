@@ -104,6 +104,7 @@ public class Traveler
 		{
 			city = scan.nextLine();
 			city = city.replaceAll("\\s+", "%20");
+			city = city.toLowerCase();
 			if (!city.equals("end"))
 			{
 				valid = City.ValidCity(city); //Check if city exists
@@ -142,7 +143,7 @@ public class Traveler
 		int i = 0;
 		int choice;
 		boolean valid;
-		System.out.printf("what would you like to visit the most? Enter the corresponding numbers one by one or 7 to finalize input: \n1)Museums\n2)Cafe\n3)Restaurants\n4)Bars\n5)Beaches\n6)Monuments\n7)End\n");
+		System.out.print("what would you like to visit the most? Enter the corresponding numbers one by one or 7 to finalize input: \n1)Museums\n2)Cafe\n3)Restaurants\n4)Bars\n5)Beaches\n6)Monuments\n7)End\n");
 		while (i <= 6)
 		{
 			choice = intScan();
@@ -256,9 +257,9 @@ public class Traveler
 	public static int MenuOption()
 	{
 		int choice = 0;
-		System.out.printf("Hello customer and welcome to our tourist agency app.\nThis app has been created to help you find the ideal travel destination ");
+		System.out.print("Hello customer and welcome to our tourist agency app.\nThis app has been created to help you find the ideal travel destination ");
 		System.out.println("So let's start by answering some questions.\n");
-		System.out.printf("What's the purpose of your travel?\n1)I just want to travel the world.\n2)I am going for business trip.\n3)I just want to relax as a tourist.\n4)Exit Program\n");
+		System.out.print("What's the purpose of your travel?\n1)I just want to travel the world.\n2)I am going for business trip.\n3)I just want to relax as a tourist.\n4)Exit Program\n");
 		while (choice < 1 || choice > 4)
 		{
 			choice = intScan();
@@ -272,7 +273,17 @@ public class Traveler
 	 */
 	public void PrintCityInfo(City c)
 	{
-		System.out.printf("Your Suggested city is: "+c.getName()+" in "+c.getCountry()+"!\n\n");
+		System.out.print("Your Suggested city is: " + c.getName() + " in " + c.getCountry() + "!\n\n");
 		Visit = c.getName();
+	}
+
+	public static boolean travelerExists(Traveler t)
+	{
+		int i;
+		for (i=0;i<=Main.AllTravelers.size()-2;i++)
+		{
+			if (Main.AllTravelers.get(i).equals(t)) return true;
+		}
+		return false;
 	}
 }
