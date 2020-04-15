@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Traveler
 {
-	private String Name;
+	private String Name,Visit;
 	public static String methods[] = {"Museums", "Cafes", "Restaurants", "Bars", "Beaches", "Monuments"};
 	private int Age;
 	private ArrayList<City> CitiesArray;
@@ -66,6 +66,10 @@ public class Traveler
 	{
 		this.preferences = preferences;
 	}
+
+	public String getVisit() { return Visit; }
+
+	public void setVisit(String visit) { Visit = visit; }
 
 	/**
 	 * Asks for input until a valid int is given
@@ -269,5 +273,6 @@ public class Traveler
 	public void PrintCityInfo(City c)
 	{
 		System.out.printf("Your Suggested city is: "+c.getName()+" in "+c.getCountry()+"!\n\n");
+		Visit = c.getName();
 	}
 }
