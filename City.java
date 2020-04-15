@@ -2,7 +2,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import weather.OpenWeatherMap;
 import wikipedia.MediaWiki;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -18,7 +17,7 @@ public class City
 	private int Museums,Cafes,Restaurants,Bars,Beaches,Monuments;
 	private double lat,lon;
 	private String weather;
-	private String name;
+	private String name, cityName;
 	private String country;
 	private String WikiInfo;
 	public static String SearchTags[] = {"museum", "café", "restaurant", "bar", "beach", "monument"};
@@ -38,6 +37,7 @@ public class City
 		lon = 0;
 		weather = "";
 		WikiInfo = "";
+		cityName = name + ","+ country;
 	}
 
 	public City(String name, String country)
@@ -54,6 +54,7 @@ public class City
 		lon = 0;
 		weather = "";
 		WikiInfo = "";
+		cityName = name + ","+ country;
 	}
 
 	public City(String name, int museums, int cafes, int restaurants , int bars, int beaches, int monuments, double lat, double lon, String weather) {
@@ -143,6 +144,12 @@ public class City
 	public void setWeather(String weather) {
 		this.weather = weather;
 	}
+
+	public String getCityName() { return cityName; }
+
+	public void setCityName(String cityName) { this.cityName = cityName; }
+
+	public void setCountry(String country) { this.country = country; }
 
 	/**
 	 *
@@ -288,20 +295,29 @@ public class City
 	 * @throws InvocationTargetException
 	 * @throws IllegalAccessException
 	 */
+
 	public void FillCityInfo (City c) throws IOException, NoSuchMethodException, InvocationTargetException, IllegalAccessException
 	{
-		WikiInfo = CityWikiInfo(c.name);
-		CityCoords(c);
-		CityWeather();
-		int i;
-		int count;
-		String text;
-		for (i = 0; i <= 5; i++)
+		int index = CityExists(c);
+		if(index != -1)
 		{
-			text = Traveler.methods[i];
-			Method method = c.getClass().getMethod("set"+text, int.class);
-			count = CountWordResults(WikiInfo,SearchTags[i]);
-			method.invoke(c,count);
+
+		}
+		else
+		{
+			WikiInfo = CityWikiInfo(c.name);
+			CityCoords(c);
+			CityWeather();
+			int i;
+			int count;
+			String text;
+			for (i = 0; i <= 5; i++)
+			{
+				text = Traveler.methods[i];
+				Method method = c.getClass().getMethod("set"+text, int.class);
+				count = CountWordResults(WikiInfo,SearchTags[i]);
+				method.invoke(c,count);
+			}
 		}
 	}
 
@@ -310,5 +326,26 @@ public class City
 		ObjectMapper mapper = new ObjectMapper();
 		OpenWeatherMap weather_obj = mapper.readValue(new URL("http://api.openweathermap.org/data/2.5/weather?q="+CityName+"&APPID="+appid+""), OpenWeatherMap.class);
 		return weather_obj.getName()+","+weather_obj.getSys().getCountry();
+	}
+
+	public boolean equals(City c)
+	{
+		if (c.name.equalsIgnoreCase(this.name))
+		{
+			System.out.printf("City exists in database, good.");
+			return true;
+		}
+		System.out.printf("City doesn't exist in database, adding.");
+		return false;
+	}
+
+	public static int CityExists(City c)
+	{
+		int i;
+		for (i=0;i<=Main.AllCities.size()-1;i++)
+		{
+			if (Main.AllCities.get(i).equals(c)) return i;
+		}
+		return -1;
 	}
 }

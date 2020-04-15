@@ -47,6 +47,7 @@ public class Main
 	}
 
 	public static ArrayList<Traveler> AllTravelers = new ArrayList<Traveler>();
+	public static ArrayList<City> AllCities = new ArrayList<City>();
 
 	/**
 	 * Handles user input and method calling
@@ -101,11 +102,18 @@ public class Main
 				int i;
 				AllTravelers.get(index).setAge(age);
 				TempCityNames = AllTravelers.get(index).InputCities();
+				int tempIndex;
 				for (i=0;i<=TempCityNames.size()-1;i++)
 				{
 					String C[] = TempCityNames.get(i).split(",");
 					TempCityObjectsList.add(new City(C[0],C[1]));
-					TempCityObjectsList.get(i).FillCityInfo(TempCityObjectsList.get(i));
+					tempIndex = City.CityExists(TempCityObjectsList.get(i));
+					if (tempIndex != -1)
+					{
+						TempCityObjectsList.remove(i);
+						TempCityObjectsList.add(AllCities.get(tempIndex));
+					}
+					else TempCityObjectsList.get(i).FillCityInfo(TempCityObjectsList.get(i));
 				}
 				AllTravelers.get(index).setCitiesArray(TempCityObjectsList);
 				AllTravelers.get(index).PreferenceTags();
