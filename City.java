@@ -2,6 +2,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import weather.OpenWeatherMap;
 import wikipedia.MediaWiki;
 import java.io.IOException;
+import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.URL;
@@ -11,7 +12,7 @@ import java.util.ArrayList;
  * @author lampr
  *
  */
-public class City
+public class City implements Serializable
 {
 	private int Museums,Cafes,Restaurants,Bars,Beaches,Monuments;
 	private double lat,lon;

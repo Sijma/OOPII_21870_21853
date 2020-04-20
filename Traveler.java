@@ -1,13 +1,13 @@
-import java.io.IOException;
+import java.io.*;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Traveler
+public class Traveler implements Comparable<Traveler>, Serializable
 {
 	private String Name,Visit;
-	public static String methods[] = {"Museums", "Cafes", "Restaurants", "Bars", "Beaches", "Monuments"};
+	public static String[] methods = {"Museums", "Cafes", "Restaurants", "Bars", "Beaches", "Monuments"};
 	private int Age;
 	private ArrayList<City> CitiesArray;
 	private Boolean[] preferences;
@@ -18,7 +18,7 @@ public class Traveler
 	{
 		Name = "";
 		Age = 0;
-		CitiesArray = new ArrayList<City>();
+		CitiesArray = new ArrayList<>();
 		preferences = new Boolean[] {false,false,false,false,false,false};
 	    traveler_counter++;
 	}
@@ -95,7 +95,7 @@ public class Traveler
 	 */
 	public ArrayList<String> InputCities() throws IOException
 	{
-		ArrayList<String> GivenCities = new ArrayList<String>(); //Making arraylist for all given cities.
+		ArrayList<String> GivenCities = new ArrayList<>(); //Making arraylist for all given cities.
 		String city = "";
 		boolean valid;
 		int i;
@@ -142,7 +142,6 @@ public class Traveler
 	{
 		int i = 0;
 		int choice;
-		boolean valid;
 		System.out.print("what would you like to visit the most? Enter the corresponding numbers one by one or 7 to finalize input: \n1)Museums\n2)Cafe\n3)Restaurants\n4)Bars\n5)Beaches\n6)Monuments\n7)End\n");
 		while (i <= 6)
 		{
@@ -285,5 +284,33 @@ public class Traveler
 			if (Main.AllTravelers.get(i).equals(t)) return true;
 		}
 		return false;
+	}
+
+	@Override
+	public int compareTo(Traveler t)
+	{
+		return this.Age - t.Age;
+	}
+
+	public static void saveTravelers() throws IOException
+	{
+		FileOutputStream fos = new FileOutputStream("TravelersFile");
+		ObjectOutputStream oos = new ObjectOutputStream(fos);
+		oos.writeObject(Main.AllTravelers);
+		oos.close();
+	}
+
+	public static void loadTravelers() throws IOException, ClassNotFoundException
+	{
+		File temp = new File("TravelersFile");
+		boolean exists = temp.exists();
+		if (exists)
+		{
+			FileInputStream fis = new FileInputStream("TravelersFile");
+			ObjectInputStream ois = new ObjectInputStream(fis);
+			Main.AllTravelers = (ArrayList<Traveler>) ois.readObject();
+			ois.close();
+			traveler_counter = Main.AllTravelers.size();
+		}
 	}
 }
