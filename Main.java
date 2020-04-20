@@ -57,20 +57,20 @@ public class Main
 	 * @throws IllegalAccessException
 	 * @throws InvocationTargetException
 	 */
-	public static void main(String[] args) throws IOException, NoSuchMethodException, IllegalAccessException, InvocationTargetException
+	public static void main(String[] args) throws IOException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, ClassNotFoundException
 	{
-		int choice = 0;
+		Traveler.loadTravelers();
+		int choice;
 		int index;
 		int age;
-		ArrayList<String> TempCityNames = new ArrayList<String>();
-		ArrayList<City> TempCityObjectsList = new ArrayList<City>();
+		ArrayList<String> TempCityNames = new ArrayList<>();
+		ArrayList<City> TempCityObjectsList = new ArrayList<>();
 		City BestCity;
 		Scanner scan = new Scanner(System.in);
-		while (choice != 4)
+		while (true)
 		{
 			choice = Traveler.MenuOption();
 			TempCityNames.clear();
-			TempCityObjectsList.clear();
 			if(choice==1)
 			{
 				AllTravelers.add(new Traveler());
@@ -83,45 +83,83 @@ public class Main
 			{
 				AllTravelers.add(new Tourist());
 			}
-			else
+			else if(choice==4)
 			{
 				break;
 			}
-			if (choice !=4)
+			index = Traveler.traveler_counter - 1;
+			System.out.print("What is your name?\n");
+			AllTravelers.get(index).setName(scan.next());
+			System.out.print("How old are you?\n");
+			age = Traveler.intScan();
+			while (age <= 0)
 			{
-				index = Traveler.traveler_counter - 1;
-				System.out.printf("What is your name?\n");
-				AllTravelers.get(index).setName(scan.next());
-				System.out.printf("How old are you?\n");
+				System.out.print("Invalid input. Please try again\n");
 				age = Traveler.intScan();
-				while (age <= 0)
+			}
+			int i;
+			AllTravelers.get(index).setAge(age);
+			TempCityNames = AllTravelers.get(index).InputCities();
+			int tempIndex;
+			TempCityObjectsList = AllTravelers.get(index).getCitiesArray();
+			for (i=0;i<=TempCityNames.size()-1;i++)
+			{
+				String[] C = TempCityNames.get(i).split(",");
+				TempCityObjectsList.add(new City(C[0],C[1]));
+				tempIndex = City.CityExists(TempCityObjectsList.get(i));
+				if (tempIndex != -1)
 				{
-					System.out.printf("Invalid input. Please try again\n");
-					age = Traveler.intScan();
+					TempCityObjectsList.remove(i);
+					TempCityObjectsList.add(AllCities.get(tempIndex));
 				}
-				int i;
-				AllTravelers.get(index).setAge(age);
-				TempCityNames = AllTravelers.get(index).InputCities();
-				int tempIndex;
-				for (i=0;i<=TempCityNames.size()-1;i++)
+				else
 				{
-					String C[] = TempCityNames.get(i).split(",");
-					TempCityObjectsList.add(new City(C[0],C[1]));
-					tempIndex = City.CityExists(TempCityObjectsList.get(i));
-					if (tempIndex != -1)
-					{
-						TempCityObjectsList.remove(i);
-						TempCityObjectsList.add(AllCities.get(tempIndex));
-					}
-					else TempCityObjectsList.get(i).FillCityInfo(TempCityObjectsList.get(i));
+					TempCityObjectsList.get(i).FillCityInfo(TempCityObjectsList.get(i));
+					AllCities.add(TempCityObjectsList.get(i));
 				}
-				AllTravelers.get(index).setCitiesArray(TempCityObjectsList);
-				AllTravelers.get(index).PreferenceTags();
-				TempCityObjectsList = AllTravelers.get(index).getCitiesArray();
-				BestCity = AllTravelers.get(index).CompareCities(TempCityObjectsList);
-				AllTravelers.get(index).PrintCityInfo(BestCity);
+			}
+			System.out.print("index: "+ index);
+			AllTravelers.get(index).setCitiesArray(TempCityObjectsList);
+			AllTravelers.get(index).PreferenceTags();
+			TempCityObjectsList = AllTravelers.get(index).getCitiesArray();
+			BestCity = AllTravelers.get(index).CompareCities(TempCityObjectsList);
+			AllTravelers.get(index).PrintCityInfo(BestCity);
+			if (Traveler.travelerExists(AllTravelers.get(index)))
+			{
+				AllTravelers.remove(index);
+				Traveler.traveler_counter--;
 			}
 		}
-		goldenTicket(AllTravelers);
+		//if (Traveler.traveler_counter > 0) goldenTicket(AllTravelers);
+		Traveler.saveTravelers();
+		/** Output here used for debugging and
+		int tempi;
+		int i;
+		Traveler temptraveler;
+		System.out.print("ok");
+		System.out.print(AllTravelers.get(0).getName());
+		for (tempi =0; tempi<=Traveler.traveler_counter-1;tempi++)
+		{
+			temptraveler = AllTravelers.get(tempi);
+			System.out.print(temptraveler.getName());
+			System.out.print(temptraveler.getAge());
+			TempCityObjectsList = temptraveler.getCitiesArray();
+			for (i =0; i<=TempCityObjectsList.size()-1;i++)
+			{
+				System.out.print(TempCityObjectsList.get(i).getName());
+				System.out.print(TempCityObjectsList.get(i).getCountry());
+				System.out.print(TempCityObjectsList.get(i).getMuseums());
+				System.out.print(TempCityObjectsList.get(i).getCafes());
+				System.out.print(TempCityObjectsList.get(i).getRestaurants());
+				System.out.print(TempCityObjectsList.get(i).getBars());
+				System.out.print(TempCityObjectsList.get(i).getBeaches());
+				System.out.print(TempCityObjectsList.get(i).getMonuments());
+				System.out.print(TempCityObjectsList.get(i).getLat());
+				System.out.print(TempCityObjectsList.get(i).getLon());
+				System.out.print(TempCityObjectsList.get(i).getWeather());
+				System.out.print(TempCityObjectsList.get(i).getCityName());
+			}
+		}
+		 **/
 	}
 }

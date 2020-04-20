@@ -1,8 +1,8 @@
 import com.fasterxml.jackson.databind.ObjectMapper;
 import weather.OpenWeatherMap;
 import wikipedia.MediaWiki;
-
 import java.io.IOException;
+import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.URL;
@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * @author lampr
  *
  */
-public class City
+public class City implements Serializable
 {
 	private int Museums,Cafes,Restaurants,Bars,Beaches,Monuments;
 	private double lat,lon;
@@ -328,8 +328,10 @@ public class City
 		return weather_obj.getName()+","+weather_obj.getSys().getCountry();
 	}
 
-	public boolean equals(City c)
+	@Override
+	public boolean equals(Object o)
 	{
+		City c = (City) o;
 		if (c.name.equalsIgnoreCase(this.name))
 		{
 			System.out.printf("City exists in database, good.");
