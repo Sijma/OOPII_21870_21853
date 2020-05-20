@@ -19,20 +19,153 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="94efbb5f-e699-47c0-ae03-d03b605b2af4" name="Default Changelist" comment="added cities to collection">
-      <change afterPath="$PROJECT_DIR$/TravelersFile" afterDir="false" />
+    <list default="true" id="94efbb5f-e699-47c0-ae03-d03b605b2af4" name="Default Changelist" comment="Added saving and loading file">
+      <change afterPath="$PROJECT_DIR$/src/Giveaway.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Validate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/City.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Traveler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Traveler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOPII_21870_21853/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOPII_21870_21853/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Business.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Business.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/City.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/City.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOPII_21870_21853.iml" beforeDir="false" afterPath="$PROJECT_DIR$/OOPII_21870_21853.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tourist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tourist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Traveler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Traveler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Traveler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelersFile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/.project" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Business.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Business.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/City.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOPII_21870_21853/City.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/Business.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/City.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/Main.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/Tourist.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/Traveler.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/allclasses-index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/allclasses.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/allpackages-index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/class-use/Business.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/class-use/City.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/class-use/Main.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/class-use/Tourist.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/class-use/Traveler.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/constant-values.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/deprecated-list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/element-list" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/help-doc.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/index-files/index-1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/index-files/index-10.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/index-files/index-11.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/index-files/index-12.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/index-files/index-13.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/index-files/index-14.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/index-files/index-15.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/index-files/index-16.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/index-files/index-2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/index-files/index-3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/index-files/index-4.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/index-files/index-5.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/index-files/index-6.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/index-files/index-7.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/index-files/index-8.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/index-files/index-9.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/jquery/external/jquery/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/jquery/images/ui-bg_glass_55_fbf9ee_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/jquery/images/ui-bg_glass_65_dadada_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/jquery/images/ui-bg_glass_75_dadada_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/jquery/images/ui-bg_glass_75_e6e6e6_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/jquery/images/ui-bg_glass_95_fef1ec_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/jquery/images/ui-bg_highlight-soft_75_cccccc_1x100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/jquery/images/ui-icons_222222_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/jquery/images/ui-icons_2e83ff_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/jquery/images/ui-icons_454545_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/jquery/images/ui-icons_888888_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/jquery/images/ui-icons_cd0a0a_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/jquery/jquery-3.3.1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/jquery/jquery-migrate-3.0.1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/jquery/jquery-ui.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/jquery/jquery-ui.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/jquery/jquery-ui.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/jquery/jquery-ui.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/jquery/jquery-ui.structure.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/jquery/jquery-ui.structure.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/jquery/jszip-utils/dist/jszip-utils-ie.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/jquery/jszip-utils/dist/jszip-utils-ie.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/jquery/jszip-utils/dist/jszip-utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/jquery/jszip-utils/dist/jszip-utils.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/jquery/jszip/dist/jszip.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/jquery/jszip/dist/jszip.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/member-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/member-search-index.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/overview-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/overview-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/package-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/package-search-index.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/package-use.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/resources/glass.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/resources/x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/search.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/stylesheet.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/type-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/type-search-index.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/weather/Clouds.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/weather/Coord.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/weather/Main.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/weather/OpenWeatherMap.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/weather/Sys.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/weather/Weather.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/weather/Wind.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/weather/class-use/Clouds.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/weather/class-use/Coord.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/weather/class-use/Main.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/weather/class-use/OpenWeatherMap.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/weather/class-use/Sys.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/weather/class-use/Weather.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/weather/class-use/Wind.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/weather/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/weather/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/weather/package-use.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/wikipedia/Extracts.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/wikipedia/MediaWiki.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/wikipedia/Page.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/wikipedia/Query.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/wikipedia/Warnings.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/wikipedia/class-use/Extracts.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/wikipedia/class-use/MediaWiki.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/wikipedia/class-use/Page.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/wikipedia/class-use/Query.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/wikipedia/class-use/Warnings.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/wikipedia/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/wikipedia/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Javadoc/wikipedia/package-use.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/OpenData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/OOPII_21870_21853.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Tourist.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Tourist.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Traveler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOPII_21870_21853/Traveler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/TravelersFile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/jars/commons-lang-2.6-javadoc.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/jars/commons-lang-2.6-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/jars/commons-lang-2.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/jars/jackson-annotations-2.9.8.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/jars/jackson-core-2.9.8.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/jars/jackson-databind-2.9.8.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/weather/Clouds.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOPII_21870_21853/weather/Clouds.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/weather/Coord.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOPII_21870_21853/weather/Coord.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/weather/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOPII_21870_21853/weather/Main.class" afterDir="false" />
@@ -45,6 +178,18 @@
       <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/wikipedia/Page.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOPII_21870_21853/wikipedia/Page.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/wikipedia/Query.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOPII_21870_21853/wikipedia/Query.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/wikipedia/Warnings.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOPII_21870_21853/wikipedia/Warnings.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather/Clouds.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/weather/Clouds.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather/Coord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/weather/Coord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/weather/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather/OpenWeatherMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/weather/OpenWeatherMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather/Sys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/weather/Sys.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather/Weather.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/weather/Weather.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather/Wind.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/weather/Wind.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikipedia/Extracts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wikipedia/Extracts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikipedia/MediaWiki.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wikipedia/MediaWiki.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikipedia/Page.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wikipedia/Page.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikipedia/Query.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wikipedia/Query.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikipedia/Warnings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wikipedia/Warnings.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +201,13 @@
   </component>
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -89,16 +241,39 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/jars" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../Program Files (x86)/Java/javafx-sdk-14.0.1/lib" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\John\IdeaProjects\OOPII_21870_21853\src" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\John\IdeaProjects\OOPII_21870_21853\src" />
+      <recent name="C:\Users\John\IdeaProjects\OOPII_21870_21853" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.Main">
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="src.Main" />
+      <module name="OOPII_21870_21853" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="src.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="OOPII_21870_21853" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;/Program Files (x86)/Java/javafx-sdk-14.0.1/lib&quot; --add-modules=javafx.controls,javafx.fxml  " />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -110,13 +285,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.Main (1)" />
+      <item itemvalue="Application.OpenData" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.OpenData" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.OpenData" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -236,7 +416,21 @@
       <option name="project" value="LOCAL" />
       <updated>1586969994554</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Added saving and loading file">
+      <created>1587407121330</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1587407121330</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Added saving and loading file">
+      <created>1587407127295</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1587407127295</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -263,34 +457,53 @@
     <MESSAGE value="Saturday" />
     <MESSAGE value="Removed debug messages" />
     <MESSAGE value="added cities to collection" />
-    <option name="LAST_COMMIT_MESSAGE" value="added cities to collection" />
+    <MESSAGE value="Added saving and loading file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added saving and loading file" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="555" y="179" width="800" height="676" key="#Notifications" timestamp="1585125850041">
-      <screen x="0" y="0" width="1920" height="1035" />
+    <state x="555" y="180" width="800" height="676" key="#Notifications" timestamp="1589825334798">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="555" y="179" width="800" height="676" key="#Notifications/0.0.1920.1035/1920.0.1920.1080@0.0.1920.1035" timestamp="1585125850041" />
+    <state x="555" y="180" key="#Notifications/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589825334798" />
     <state x="558" y="173" key="#Other_File_Types" timestamp="1583427129213">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="558" y="173" key="#Other_File_Types/0.0.1920.1032/1919.0.1920.1080@0.0.1920.1032" timestamp="1583427129213" />
-    <state x="422" y="168" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583235416990">
-      <screen x="0" y="0" width="1920" height="1032" />
-    </state>
-    <state x="422" y="168" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1032/1919.0.1920.1080@0.0.1920.1032" timestamp="1583235416990" />
-    <state x="713" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1587226529077">
+    <state x="440" y="94" key="#Project_Structure" timestamp="1589908788898">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="713" y="322" key="#com.intellij.fileTypes.FileTypeChooser/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587226529077" />
-    <state x="1078" y="208" key="#com.intellij.ide.util.MemberChooser" timestamp="1586970547980">
+    <state x="440" y="94" key="#Project_Structure/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589908788898" />
+    <state x="422" y="169" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589909616770">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="422" y="168" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1032/1919.0.1920.1080@0.0.1920.1032" timestamp="1583235416990" />
+    <state x="422" y="169" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589909616770" />
+    <state x="713" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1590013110045">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="713" y="322" key="#com.intellij.fileTypes.FileTypeChooser/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590013110045" />
+    <state x="1078" y="208" key="#com.intellij.ide.util.MemberChooser" timestamp="1589996661788">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1124" y="209" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1035/1920.0.1920.1080@0.0.1920.1035" timestamp="1585395295476" />
-    <state x="1078" y="208" key="#com.intellij.ide.util.MemberChooser/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1586970547980" />
+    <state x="1078" y="208" key="#com.intellij.ide.util.MemberChooser/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589996661788" />
     <state x="810" y="406" width="300" height="225" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1583427391739">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="810" y="406" width="300" height="225" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1032/1919.0.1920.1080@0.0.1920.1032" timestamp="1583427391739" />
+    <state x="882" y="109" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog" timestamp="1589909578178">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="882" y="109" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589909578178" />
+    <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1589284224715">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589284224715" />
+    <state x="77" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1590002948127">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="77" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590002948127" />
     <state x="713" y="253" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1585416612772">
       <screen x="0" y="0" width="1920" height="1035" />
     </state>
@@ -305,41 +518,65 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="190" y="84" key="DiffContextDialog/0.0.1920.1032/1919.0.1920.1080@0.0.1920.1032" timestamp="1583429752007" />
-    <state x="746" y="256" key="FileChooserDialogImpl" timestamp="1586792370934">
+    <state x="746" y="256" key="FileChooserDialogImpl" timestamp="1589909570058">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="746" y="254" key="FileChooserDialogImpl/0.0.1920.1032/1919.0.1920.1080@0.0.1920.1032" timestamp="1583426838860" />
     <state x="746" y="254" key="FileChooserDialogImpl/0.0.1920.1032/1920.0.1920.1080@0.0.1920.1032" timestamp="1583616555974" />
     <state x="746" y="255" key="FileChooserDialogImpl/0.0.1920.1035/1920.0.1920.1080@0.0.1920.1035" timestamp="1585416608116" />
-    <state x="746" y="256" key="FileChooserDialogImpl/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1586792370934" />
+    <state x="746" y="256" key="FileChooserDialogImpl/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589909570058" />
     <state x="729" y="379" key="Github.CreatePullRequestDialog" timestamp="1583235663188">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="729" y="379" key="Github.CreatePullRequestDialog/0.0.1920.1032/1919.0.1920.1080@0.0.1920.1032" timestamp="1583235663188" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1587406310564">
+    <state width="1877" height="247" key="GridCell.Tab.0.bottom" timestamp="1590013118900">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1874" height="271" key="GridCell.Tab.0.bottom/0.0.1920.1032/1919.0.1920.1080@0.0.1920.1032" timestamp="1583426847789" />
     <state width="1874" height="273" key="GridCell.Tab.0.bottom/0.0.1920.1035/1920.0.1920.1080@0.0.1920.1035" timestamp="1585416612816" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587406310564" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1587406310564">
+    <state width="1877" height="247" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590013118900" />
+    <state width="1877" height="273" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1589944347956" />
+    <state width="1877" height="247" key="GridCell.Tab.0.center" timestamp="1590013118900">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1874" height="271" key="GridCell.Tab.0.center/0.0.1920.1032/1919.0.1920.1080@0.0.1920.1032" timestamp="1583426847789" />
     <state width="1874" height="273" key="GridCell.Tab.0.center/0.0.1920.1035/1920.0.1920.1080@0.0.1920.1035" timestamp="1585416612816" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587406310564" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1587406310564">
+    <state width="1877" height="247" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590013118900" />
+    <state width="1877" height="273" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1589944347956" />
+    <state width="1877" height="247" key="GridCell.Tab.0.left" timestamp="1590013118900">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1874" height="271" key="GridCell.Tab.0.left/0.0.1920.1032/1919.0.1920.1080@0.0.1920.1032" timestamp="1583426847789" />
     <state width="1874" height="273" key="GridCell.Tab.0.left/0.0.1920.1035/1920.0.1920.1080@0.0.1920.1035" timestamp="1585416612815" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587406310564" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1587406310564">
+    <state width="1877" height="247" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590013118900" />
+    <state width="1877" height="273" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1589944347956" />
+    <state width="1877" height="247" key="GridCell.Tab.0.right" timestamp="1590013118900">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1874" height="271" key="GridCell.Tab.0.right/0.0.1920.1032/1919.0.1920.1080@0.0.1920.1032" timestamp="1583426847789" />
     <state width="1874" height="273" key="GridCell.Tab.0.right/0.0.1920.1035/1920.0.1920.1080@0.0.1920.1035" timestamp="1585416612816" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587406310564" />
+    <state width="1877" height="247" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590013118900" />
+    <state width="1877" height="273" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1589944347956" />
+    <state width="1877" height="340" key="GridCell.Tab.1.bottom" timestamp="1590004541864">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="340" key="GridCell.Tab.1.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590004541864" />
+    <state width="1877" height="340" key="GridCell.Tab.1.center" timestamp="1590004541864">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="340" key="GridCell.Tab.1.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590004541864" />
+    <state width="1877" height="340" key="GridCell.Tab.1.left" timestamp="1590004541864">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="340" key="GridCell.Tab.1.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590004541864" />
+    <state width="1877" height="340" key="GridCell.Tab.1.right" timestamp="1590004541864">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="340" key="GridCell.Tab.1.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590004541864" />
+    <state x="540" y="263" key="IDE.errors.dialog" timestamp="1590012005260">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="540" y="263" key="IDE.errors.dialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590012005260" />
     <state x="676" y="228" key="MultipleFileMergeDialog" timestamp="1583613313768">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
@@ -349,20 +586,20 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="711" y="225" key="RollbackChangesDialog/0.0.1920.1032/1920.0.1920.1080@0.0.1920.1032" timestamp="1583624229295" />
-    <state x="446" y="87" width="1024" height="844" key="SettingsEditor" timestamp="1586937024579">
+    <state x="446" y="87" width="1024" height="844" key="SettingsEditor" timestamp="1589909590010">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="446" y="87" key="SettingsEditor/0.0.1920.1032/1919.0.1920.1080@0.0.1920.1032" timestamp="1583417449188" />
     <state x="446" y="87" key="SettingsEditor/0.0.1920.1032/1920.0.1920.1080@0.0.1920.1032" timestamp="1583624164519" />
     <state x="446" y="87" width="1024" height="844" key="SettingsEditor/0.0.1920.1035/1920.0.1920.1080@0.0.1920.1035" timestamp="1585127064165" />
-    <state x="446" y="87" key="SettingsEditor/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1586937024579" />
-    <state x="558" y="248" key="Vcs.Push.Dialog.v2" timestamp="1586965300066">
+    <state x="446" y="87" key="SettingsEditor/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589909590010" />
+    <state x="558" y="248" key="Vcs.Push.Dialog.v2" timestamp="1587407141388">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="558" y="246" key="Vcs.Push.Dialog.v2/0.0.1920.1032/1919.0.1920.1080@0.0.1920.1032" timestamp="1583429981607" />
     <state x="558" y="246" key="Vcs.Push.Dialog.v2/0.0.1920.1032/1920.0.1920.1080@0.0.1920.1032" timestamp="1583623887825" />
     <state x="558" y="247" key="Vcs.Push.Dialog.v2/0.0.1920.1035/1920.0.1920.1080@0.0.1920.1035" timestamp="1585416499222" />
-    <state x="558" y="248" key="Vcs.Push.Dialog.v2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1586965300066" />
+    <state x="558" y="248" key="Vcs.Push.Dialog.v2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587407141388" />
     <state x="98" y="95" width="1724" height="839" key="com.intellij.dvcs.ui.CompareBranchesDialog" timestamp="1583238530887">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
@@ -380,11 +617,16 @@
       <screen x="0" y="0" width="1920" height="1035" />
     </state>
     <state x="619" y="136" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1035/1920.0.1920.1080@0.0.1920.1035" timestamp="1585142486678" />
-    <state x="768" y="430" width="390" height="169" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583623913344">
-      <screen x="0" y="0" width="1920" height="1032" />
+    <state x="768" y="433" width="390" height="169" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590013670156">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="768" y="430" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1032/1919.0.1920.1080@0.0.1920.1032" timestamp="1583430058774" />
     <state x="768" y="430" width="390" height="169" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1032/1920.0.1920.1080@0.0.1920.1032" timestamp="1583623913344" />
+    <state x="768" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590013670156" />
+    <state x="526" y="167" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1590004339153">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="526" y="167" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590004339153" />
     <state x="733" y="226" key="git4idea.branch.GitSmartOperationDialog" timestamp="1583624519199">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
@@ -394,16 +636,20 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="626" y="362" key="git4idea.ui.GitUnstashDialog/0.0.1920.1032/1919.0.1920.1080@0.0.1920.1032" timestamp="1583427263540" />
-    <state x="606" y="131" width="698" height="773" key="new project wizard" timestamp="1587120767167">
+    <state x="365" y="154" width="698" height="773" key="new project wizard" timestamp="1589908408386">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="606" y="130" width="698" height="773" key="new project wizard/0.0.1920.1035/1920.0.1920.1080@0.0.1920.1035" timestamp="1584951664819" />
-    <state x="606" y="131" key="new project wizard/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587120767167" />
-    <state x="623" y="228" width="672" height="682" key="search.everywhere.popup" timestamp="1587225618388">
+    <state x="365" y="154" key="new project wizard/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589908408386" />
+    <state x="669" y="263" key="refactoring.ChangeSignatureDialog" timestamp="1589995796106">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="669" y="263" key="refactoring.ChangeSignatureDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589995796106" />
+    <state x="623" y="228" width="672" height="682" key="search.everywhere.popup" timestamp="1590002791012">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1035/1920.0.1920.1080@0.0.1920.1035" timestamp="1585142382146" />
-    <state x="623" y="228" width="672" height="682" key="search.everywhere.popup/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587225618388" />
+    <state x="623" y="228" width="672" height="682" key="search.everywhere.popup/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590002791012" />
     <state x="731" y="409" key="svn.passwordDialog" timestamp="1583235898272">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
@@ -416,5 +662,16 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="730" y="297" key="svn4idea.import.options/0.0.1920.1032/1919.0.1920.1080@0.0.1920.1032" timestamp="1583235894183" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties>
+            <option name="NOTIFY_CAUGHT" value="false" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
