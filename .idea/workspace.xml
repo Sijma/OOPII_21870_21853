@@ -20,12 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="94efbb5f-e699-47c0-ae03-d03b605b2af4" name="Default Changelist" comment="Added saving and loading file">
-      <change afterPath="$PROJECT_DIR$/src/CollaborativeFiltering.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/RecommendedCity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOPII_21870_21853.iml" beforeDir="false" afterPath="$PROJECT_DIR$/OOPII_21870_21853.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tourist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tourist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Traveler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Traveler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/UI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOPII_21870_21853/UI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CollaborativeFiltering.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CollaborativeFiltering.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +46,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="City_Colection" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -266,7 +264,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587407127295</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Added saving and loading file">
+      <created>1591030603745</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1591030603745</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -365,33 +370,33 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="729" y="379" key="Github.CreatePullRequestDialog/0.0.1920.1032/1919.0.1920.1080@0.0.1920.1032" timestamp="1583235663188" />
-    <state width="1877" height="247" key="GridCell.Tab.0.bottom" timestamp="1590013118900">
+    <state width="1877" height="246" key="GridCell.Tab.0.bottom" timestamp="1591030909850">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1874" height="271" key="GridCell.Tab.0.bottom/0.0.1920.1032/1919.0.1920.1080@0.0.1920.1032" timestamp="1583426847789" />
     <state width="1874" height="273" key="GridCell.Tab.0.bottom/0.0.1920.1035/1920.0.1920.1080@0.0.1920.1035" timestamp="1585416612816" />
-    <state width="1877" height="247" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590013118900" />
+    <state width="1877" height="246" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591030909850" />
     <state width="1877" height="273" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1589944347956" />
-    <state width="1877" height="247" key="GridCell.Tab.0.center" timestamp="1590013118900">
+    <state width="1877" height="246" key="GridCell.Tab.0.center" timestamp="1591030909850">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1874" height="271" key="GridCell.Tab.0.center/0.0.1920.1032/1919.0.1920.1080@0.0.1920.1032" timestamp="1583426847789" />
     <state width="1874" height="273" key="GridCell.Tab.0.center/0.0.1920.1035/1920.0.1920.1080@0.0.1920.1035" timestamp="1585416612816" />
-    <state width="1877" height="247" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590013118900" />
+    <state width="1877" height="246" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591030909850" />
     <state width="1877" height="273" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1589944347956" />
-    <state width="1877" height="247" key="GridCell.Tab.0.left" timestamp="1590013118900">
+    <state width="1877" height="246" key="GridCell.Tab.0.left" timestamp="1591030909850">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1874" height="271" key="GridCell.Tab.0.left/0.0.1920.1032/1919.0.1920.1080@0.0.1920.1032" timestamp="1583426847789" />
     <state width="1874" height="273" key="GridCell.Tab.0.left/0.0.1920.1035/1920.0.1920.1080@0.0.1920.1035" timestamp="1585416612815" />
-    <state width="1877" height="247" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590013118900" />
+    <state width="1877" height="246" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591030909850" />
     <state width="1877" height="273" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1589944347956" />
-    <state width="1877" height="247" key="GridCell.Tab.0.right" timestamp="1590013118900">
+    <state width="1877" height="246" key="GridCell.Tab.0.right" timestamp="1591030909850">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1874" height="271" key="GridCell.Tab.0.right/0.0.1920.1032/1919.0.1920.1080@0.0.1920.1032" timestamp="1583426847789" />
     <state width="1874" height="273" key="GridCell.Tab.0.right/0.0.1920.1035/1920.0.1920.1080@0.0.1920.1035" timestamp="1585416612816" />
-    <state width="1877" height="247" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590013118900" />
+    <state width="1877" height="246" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591030909850" />
     <state width="1877" height="273" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1589944347956" />
     <state width="1877" height="340" key="GridCell.Tab.1.bottom" timestamp="1590004541864">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -429,13 +434,13 @@
     <state x="446" y="87" key="SettingsEditor/0.0.1920.1032/1920.0.1920.1080@0.0.1920.1032" timestamp="1583624164519" />
     <state x="446" y="87" width="1024" height="844" key="SettingsEditor/0.0.1920.1035/1920.0.1920.1080@0.0.1920.1035" timestamp="1585127064165" />
     <state x="446" y="87" key="SettingsEditor/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591030081301" />
-    <state x="558" y="248" key="Vcs.Push.Dialog.v2" timestamp="1587407141388">
+    <state x="558" y="248" key="Vcs.Push.Dialog.v2" timestamp="1591030618643">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="558" y="246" key="Vcs.Push.Dialog.v2/0.0.1920.1032/1919.0.1920.1080@0.0.1920.1032" timestamp="1583429981607" />
     <state x="558" y="246" key="Vcs.Push.Dialog.v2/0.0.1920.1032/1920.0.1920.1080@0.0.1920.1032" timestamp="1583623887825" />
     <state x="558" y="247" key="Vcs.Push.Dialog.v2/0.0.1920.1035/1920.0.1920.1080@0.0.1920.1035" timestamp="1585416499222" />
-    <state x="558" y="248" key="Vcs.Push.Dialog.v2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587407141388" />
+    <state x="558" y="248" key="Vcs.Push.Dialog.v2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591030618643" />
     <state x="98" y="95" width="1724" height="839" key="com.intellij.dvcs.ui.CompareBranchesDialog" timestamp="1583238530887">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>

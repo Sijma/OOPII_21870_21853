@@ -399,10 +399,16 @@ public class UI
     public void getResult() throws IllegalAccessException, NoSuchMethodException, InvocationTargetException, IOException
     {
         City bestCity;
+        Traveler currentTraveler = Traveler.AllTravelers.get(Traveler.traveler_counter-1);
 
-        bestCity = Traveler.AllTravelers.get(Traveler.traveler_counter-1).compareCities(Traveler.AllTravelers.get(Traveler.traveler_counter-1).getTravelerCitiesArray());
+        bestCity = currentTraveler.compareCities(currentTraveler.getTravelerCitiesArray());
         alertWindowBasic("Result", "Your suggested destination is: "+bestCity.getName()+" in "+bestCity.getCountry(),"Continue");
+
+        currentTraveler.getTravelerCitiesArray().clear();
+        currentTraveler.setVisit(bestCity.getCityName());
         Traveler.saveTravelers();
+
+        CollaborativeFiltering.getCriteria();
 
         if (Traveler.travelerExists(Traveler.AllTravelers.get(Traveler.traveler_counter-1)))
         {
