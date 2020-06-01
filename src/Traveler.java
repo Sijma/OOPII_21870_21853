@@ -12,7 +12,7 @@ public class Traveler implements Comparable<Traveler>, Serializable
 	public static String[] methods = {"Museums", "Cafes", "Restaurants", "Bars", "Beaches", "Monuments"};
 	private int Age;
 	private ArrayList<City> travelerCitiesArray;
-	private Boolean[] preferences;
+	private int[] preferences;
 	public static int traveler_counter;
 	static Scanner scan = new Scanner(System.in);
 
@@ -23,8 +23,9 @@ public class Traveler implements Comparable<Traveler>, Serializable
 		sourceCity = "";
 		sourceCountry = "";
 		travelerCitiesArray = new ArrayList<>();
-		preferences = new Boolean[5];
+		preferences = new int[6];
 	    traveler_counter++;
+	    Visit = "";
 	}
 
 	public String getName() {
@@ -61,15 +62,9 @@ public class Traveler implements Comparable<Traveler>, Serializable
 		Traveler.traveler_counter++;
 	}
 
-	public Boolean[] getPreferences()
-	{
-		return preferences;
-	}
+	public int[] getPreferences() { return preferences; }
 
-	public void setPreferences(Boolean[] preferences)
-	{
-		this.preferences = preferences;
-	}
+	public void setPreferences(int[] preferences) { this.preferences = preferences; }
 
 	public String getSourceCity()
 	{
@@ -116,7 +111,7 @@ public class Traveler implements Comparable<Traveler>, Serializable
 		{
 			method = c.getClass().getMethod("get"+ methods[i]);
 			temp = (int) method.invoke(c);
-			if (temp > 0 && preferences[i])
+			if (temp > 0 && preferences[i] == 1)
 			{
 				similars++;
 			}
@@ -235,11 +230,18 @@ public class Traveler implements Comparable<Traveler>, Serializable
 
 	public void buildTraveler(String name, int age, String sourceCity, String sourceCountry, Boolean[] selections)
 	{
+		int i;
+		int[] intSelections = new int[6];
+		for (i = 0; i<=5;i++)
+		{
+			intSelections[i] = (selections[i]) ? 1 : 0;
+		}
+
 		this.Name = name;
 		this.Age = age;
 		this.sourceCity = sourceCity;
 		this.sourceCountry = sourceCountry;
-		this.preferences = selections.clone();
+		this.preferences = intSelections.clone();
 	}
 
 	public void addCities(ArrayList<String> cityNamesList) throws InvocationTargetException, NoSuchMethodException, IllegalAccessException, IOException

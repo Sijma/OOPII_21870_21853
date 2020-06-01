@@ -24,7 +24,7 @@ public class Tourist extends Traveler
 		{
 			Method m = c.getClass().getMethod("get"+methods[i]);
 			temp = (int) m.invoke(c);
-			if (temp > 0 && getPreferences()[i])
+			if (temp > 0 && getPreferences()[i] == 1)
 			{
 				similars++;
 				matching = matching + temp;
