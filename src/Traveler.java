@@ -116,8 +116,7 @@ public class Traveler implements Comparable<Traveler>, Serializable
 				similars++;
 			}
 		}
-		DistinctWords = c.CountDistinctWords(c.getWikiInfo());
-		result = (similars *1.0)/ DistinctWords;
+		result = (similars *1.0)/ c.getDistinctWords();
 		result = result * 1000;
 		return result;
 	}

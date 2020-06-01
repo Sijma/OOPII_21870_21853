@@ -1,32 +1,36 @@
-
 import java.util.Comparator;
 import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-public class CollaborativeFiltering {
+public class CollaborativeFiltering
+{
+	public static void getCriteria()
+	{
+		int[] candidateTravellerCriteria=(Traveler.AllTravelers.get(Traveler.traveler_counter-1).getPreferences());
 
-  public static void getCriteria()
-  {
+		Map<String,Integer> cityToRank=Traveler.AllTravelers.stream().collect(Collectors.toMap(Traveler::getVisit, i->innerDot(i.getPreferences(),candidateTravellerCriteria)));
 
-  	int[] candidateTravellerCriteria=(Traveler.AllTravelers.get(Traveler.traveler_counter-1).getPreferences());
+		Optional<RecommendedCity> recommendedCity=
+				Traveler.AllTravelers.stream().map(i-> new RecommendedCity(i.getVisit(),innerDot(i.getPreferences(),candidateTravellerCriteria))).max(Comparator.comparingInt(RecommendedCity::getRank));
 
-  	Map <String,Integer> cityToRank=Traveler.AllTravelers.stream().collect(Collectors.toMap(Traveler::getVisit, i->innerDot(i.getPreferences(),candidateTravellerCriteria)));
-  	cityToRank.forEach((k,v)->System.out.println("city:"+k+" rank: "+v));
+		String cityRecommendation = recommendedCity.get().getCity();
 
-  	Optional<RecommendedCity> recommendedCity=
-			Traveler.AllTravelers.stream().map(i-> new RecommendedCity(i.getVisit(),innerDot(i.getPreferences(),candidateTravellerCriteria))).max(Comparator.comparingInt(RecommendedCity::getRank));
+		if (!Traveler.AllTravelers.get(Traveler.traveler_counter-1).getVisit().equals(cityRecommendation))
+		{
+			UI recUI = new UI();
 
-  	System.out.println("The Recommended City:"+recommendedCity.get().getCity());
+			String[] s = cityRecommendation.split(",");
+			recUI.alertWindowBasic("Recommendation", "Given your choices, we also recommend you to check out: "+s[0]+" in "+s[1], "Continue");
+		}
+	}
 
-}
 	private static int innerDot(int[] currentTraveller, int[] candidateTraveller)
 	{
 		int sum=0;
 		for (int i=0; i<currentTraveller.length;i++) sum+=currentTraveller[i]*candidateTraveller[i];
 		return sum;
 	}
-
 }
 
 
