@@ -19,7 +19,7 @@ public class Giveaway
         return largest; // position of the first largest found
     }
 
-    public static String goldenTicket(ArrayList<Traveler> AllTravelers) throws InvocationTargetException, IllegalAccessException, NoSuchMethodException, IOException
+    public static String goldenTicket(ArrayList<Traveler> AllTravelers) throws InvocationTargetException, IllegalAccessException, NoSuchMethodException, IOException, InterruptedException
     {
         City c = new City(GIVEAWAY_CITY_NAME, GIVEAWAY_COUNTRY_NAME);
         c = c.buildCity(c.getCityName());

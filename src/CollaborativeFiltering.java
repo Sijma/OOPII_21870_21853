@@ -20,12 +20,13 @@ public class CollaborativeFiltering {
   	System.out.println("The Recommended City:"+recommendedCity.get().getCity());
 
 }
-	private static int innerDot(int[] currentTraveller, int[] candidateTraveller) {
+	private static int innerDot(int[] currentTraveller, int[] candidateTraveller)
+	{
 		int sum=0;
 		for (int i=0; i<currentTraveller.length;i++) sum+=currentTraveller[i]*candidateTraveller[i];
 		return sum;
 	}
-	
+
 }
 
 

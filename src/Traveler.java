@@ -244,7 +244,7 @@ public class Traveler implements Comparable<Traveler>, Serializable
 		this.preferences = intSelections.clone();
 	}
 
-	public void addCities(ArrayList<String> cityNamesList) throws InvocationTargetException, NoSuchMethodException, IllegalAccessException, IOException
+	public void addCities(ArrayList<String> cityNamesList) throws IOException, InterruptedException
 	{
 		City cityBuilder = new City();
 
