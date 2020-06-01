@@ -1,10 +1,9 @@
 import com.fasterxml.jackson.databind.ObjectMapper;
 import weather.OpenWeatherMap;
 import wikipedia.MediaWiki;
+
 import java.io.IOException;
 import java.io.Serializable;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.net.URL;
 import java.util.ArrayList;
 
@@ -233,8 +232,8 @@ public class City implements Serializable
 	{
 
 		ObjectMapper mapper = new ObjectMapper();
-		OpenWeatherMap weather_obj = mapper.readValue(new URL("http://api.openweathermap.org/data/2.5/weather?q="+c.name+","+c.country+"&APPID="+appid+""), OpenWeatherMap.class);
-		weather = weather_obj.getWeather().get(0).getMain();
+		OpenWeatherMap weather_obj = mapper.readValue(new URL("http://api.openweathermap.org/data/2.5/weather?q="+c.cityName+"&APPID="+appid+""), OpenWeatherMap.class);
+		c.setWeather(weather_obj.getWeather().get(0).getMain());
 	}
 
 
@@ -269,7 +268,7 @@ public class City implements Serializable
 		return false;
 	}
 
-	public City buildCity(String cityName) throws IOException, InvocationTargetException, IllegalAccessException, NoSuchMethodException
+	public City buildCity(String cityName) throws IOException, InterruptedException
 	{
 		String[] C = cityName.split(",");
 		City tempCity = new City(C[0], C[1]);
@@ -277,20 +276,17 @@ public class City implements Serializable
 
 		if (index == -1)
 		{
-			tempCity.setWikiInfo(cityWikiInfo(tempCity.name));
+			Sthr thread = new Sthr(tempCity);
+			thread.start();
 			CityCoords(tempCity);
 			CityWeather(tempCity);
-			int i;
-			int count;
-			String text;
-			for (i = 0; i <= 5; i++)
+
+			while (thread.isAlive())
 			{
-				text = Traveler.methods[i];
-				Method method = tempCity.getClass().getMethod("set" + text, int.class);
-				count = CountWordResults(tempCity.getWikiInfo(), SearchTags[i]);
-				method.invoke(tempCity, count);
+				System.out.println("Still going");
+				thread.join();
 			}
-			allCities.add(tempCity);
+		allCities.add(tempCity);
 		}
 		else
 		{

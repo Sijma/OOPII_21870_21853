@@ -100,6 +100,9 @@ public class UI
                 } catch (IOException ioException)
                 {
                     ioException.printStackTrace();
+                } catch (InterruptedException interruptedException)
+                {
+                    interruptedException.printStackTrace();
                 }
             }
             else
@@ -392,6 +395,9 @@ public class UI
             catch (IOException ioException)
             {
                 ioException.printStackTrace();
+            } catch (InterruptedException interruptedException)
+            {
+                interruptedException.printStackTrace();
             }
         });
     }
