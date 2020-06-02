@@ -1,6 +1,6 @@
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.Map;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class CollaborativeFiltering
@@ -9,12 +9,11 @@ public class CollaborativeFiltering
 	{
 		int[] candidateTravellerCriteria=(Traveler.AllTravelers.get(Traveler.traveler_counter-1).getPreferences());
 
-		Map<String,Integer> cityToRank=Traveler.AllTravelers.stream().collect(Collectors.toMap(Traveler::getVisit, i->innerDot(i.getPreferences(),candidateTravellerCriteria)));
+		Map<String,Integer> cityToRank=Traveler.AllTravelers.stream().collect(Collectors.toMap(Traveler::getVisit, i->innerDot(i.getPreferences(),candidateTravellerCriteria), (visit1, visit2) -> visit1));
 
-		Optional<RecommendedCity> recommendedCity=
-				Traveler.AllTravelers.stream().map(i-> new RecommendedCity(i.getVisit(),innerDot(i.getPreferences(),candidateTravellerCriteria))).max(Comparator.comparingInt(RecommendedCity::getRank));
+		String cityRecommendation = Collections.max(cityToRank.entrySet(), Comparator.comparingInt(Map.Entry::getValue)).getKey();
 
-		String cityRecommendation = recommendedCity.get().getCity();
+		System.out.println("Recommended city"+cityRecommendation);
 
 		if (!Traveler.AllTravelers.get(Traveler.traveler_counter-1).getVisit().equals(cityRecommendation))
 		{
@@ -29,6 +28,7 @@ public class CollaborativeFiltering
 	{
 		int sum=0;
 		for (int i=0; i<currentTraveller.length;i++) sum+=currentTraveller[i]*candidateTraveller[i];
+		System.out.println("rank"+sum);
 		return sum;
 	}
 }
