@@ -1,4 +1,3 @@
-/*
 import java.sql.*;
 
 
@@ -6,20 +5,21 @@ public class mysql {
 	static Connection db_con_obj = null;
 	static PreparedStatement db_prep_obj = null;
 	
-	private static void makeJDBCConnection() {
-		 
-		try {
+	public static void makeJDBCConnection() {
+		try
+        {
 			//We check that the DB Driver is available in our project.
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			System.out.println("Congrats - Seems your MySQL JDBC Driver Registered!"); 
-		} catch (ClassNotFoundException e) {
+		}
+		catch (ClassNotFoundException e)
+        {
 			System.out.println("Sorry, couldn't found JDBC driver. Make sure you have added JDBC Maven Dependency Correctly");
 			e.printStackTrace();
 			return;
 		}
-
- //jdbc:mysql://127.0.0.2:3306/city_db?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
-		try {
+		try
+        {
 			// DriverManager: The basic service for managing a set of JDBC drivers.	 //We connect to a DBMS.
 			//Using the DriverManager, we can have many connections to different DBMS
 			db_con_obj = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/cities_db?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC","it21870", "it21870");
@@ -28,80 +28,67 @@ public class mysql {
 			} else {
 				System.out.println("Failed to make connection!");
 			}
-		} catch (SQLException e) {
+		}
+		catch (SQLException e)
+        {
 			System.out.println("MySQL Connection Failed!");
 			e.printStackTrace();
 			return;
 		}
-		finally {
-			System.out.println("Insert Completed.");
-		}
 	}
 
-	private static void getDataFromDB() {
+
+	public static void getDataFromDB() {
 		 
-		try {
-			// A simple MySQL Select Query 
+		try
+        {
 			String getQueryStatement = "SELECT * FROM city_table;";
-			
-			// We make a statement to the connected DBMS. We pass to the statement a query.
-			db_prep_obj = db_con_obj.prepareStatement(getQueryStatement); 
- 
-			// Execute the Query, and get a java ResultSet
+			db_prep_obj = db_con_obj.prepareStatement(getQueryStatement);
 			ResultSet rs = db_prep_obj.executeQuery();
-			
-			// Let's iterate through the java ResultSet
-			while (rs.next()) {
-				City k = new City();
-				k.setName(rs.getString("City_name"));
-				k.setCountry(rs.getString("Country"));
-			    k.setLat(rs.getDouble("LAT"));
-			    k.setLon(rs.getDouble("Lot"));
-			    k.setMuseums(rs.getInt("Museum"));
-			    k.setCafes(rs.getInt("Cafes"));
-			    k.setRestaurants(rs.getInt("Restaurant"));
-			    k.setBars(rs.getInt("Bars"));
-			    k.setBeaches(rs.getInt("Beaches"));
-			    k.setMonuments(rs.getInt("Monuments"));
-			    
-				//Float address = rs.getFloat("VALUE");//  .getString("Address");
-				//int employeeCount = rs.getInt("PSS_DIAGNOSIS_DATE_ID");
-				//int website = rs.getInt("PSS_SYMPTOMS_ONSETDATE_ID");
- 
-				// Simply Print the results
-			    System.out.printf("%s\t%s\t\t%s\t%s\t%s\t\t%s\t\t%s\t\t%s\t\t%s\t\t%s\n","City name","Country", "Latitude", "Longitude","Museums","Cafes","Restaurant","Bars","Beaches","Monuments");
-			    //System.out.printf("%s\t%s\t\t%f\t%f\t%d\t\t%d\t\t\t%d\t\t%d\t\t%d\t\t%d\n",k.city_name ,country , lat, lot,museums ,cafes,restaurant,bars,beaches,monuments);
-			}
- 
-		} catch (
- 
-		SQLException e) {
-			e.printStackTrace();
+
+			while (rs.next())
+            {
+                City.allCities.add(new City(rs.getString("City_name"), rs.getString("Country"), rs.getDouble("LAT"), rs.getDouble("Lot"), rs.getInt("Museum"), rs.getInt("Cafes"), rs.getInt("Restaurant"), rs.getInt("Bars"), rs.getInt("Beaches"), rs.getInt("Monuments"), rs.getString("Weather"), rs.getInt("TotalWords"), rs.getInt("DistinctWords")));
+            }
 		}
+		catch(SQLException e)
+        {
+            e.printStackTrace();
+        }
       
 		
 	}
-	 public static void post() throws Exception{
-	       
-	        try{
-	        	String query = "INSERT into city_table (city_name ,country , lat, lot,museums ,cafes,restaurant,bars,beaches,monuments) " + "VALUES (?,?,?,?,?,?,?,?,?,?)";
-	        	db_prep_obj = db_con_obj.prepareStatement(query);
-	        	db_prep_obj = db_con_obj.prepareStatement("INSERT INTO city_table (city_name ,country , lat, lot,museums ,cafes,restaurant,bars,beaches,monuments) VALUES (?,?,?,?,?,?,?,?,?,?)");
-	        	for (int i = 0; i <= City.allCities.size() - 1; i++){
-	        	  db_prep_obj.setString (i,City.allCities.toString());
-	        	  db_prep_obj.executeUpdate();
-	        	}
-	        } catch(Exception e){System.out.println(e);}
-	        finally {
-	            System.out.println("Insert Completed.");
-	        }
-	    }
 
-	public static void main(String [] args) throws Exception
-	{
+	 public static void post()
+     {
+         try
+         {
+             String query = "INSERT into city_table (city_name,country,lat,lot,museum,cafes,restaurant,bars,beaches,monuments,weather,totalwords,distinctwords) " + "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";
+             db_prep_obj = db_con_obj.prepareStatement(query);
 
-		makeJDBCConnection();
-		post();
-		//getDataFromDB();
-	}
-}*/
+             int i;
+             for (i = City.allCities.size() - City.newCities; i < City.allCities.size(); i++)
+             {
+                 City temp = City.allCities.get(i);
+
+                 db_prep_obj.setString (1,temp.getName());
+                 db_prep_obj.setString (2,temp.getCountry());
+                 db_prep_obj.setDouble (3,temp.getLat());
+                 db_prep_obj.setDouble (4,temp.getLon());
+                 db_prep_obj.setInt (5,temp.getMuseums());
+                 db_prep_obj.setInt (6,temp.getCafes());
+                 db_prep_obj.setInt (7,temp.getRestaurants());
+                 db_prep_obj.setInt (8,temp.getBars());
+                 db_prep_obj.setInt (9,temp.getBeaches());
+                 db_prep_obj.setInt (10,temp.getMonuments());
+                 db_prep_obj.setString (11,temp.getWeather());
+                 db_prep_obj.setInt (12,temp.getTotalWords());
+                 db_prep_obj.setInt (13,temp.getDistinctWords());
+
+                 db_prep_obj.executeUpdate();
+             }
+             City.newCities = 0;
+         }
+         catch(Exception e){System.out.println(e);}
+     }
+}

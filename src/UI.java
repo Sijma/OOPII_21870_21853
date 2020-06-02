@@ -365,6 +365,8 @@ public class UI
                     cityList.add((cityName.getText() + "," + countryName.getText()).toLowerCase());
                     selectedCitiesList.getItems().add((cityName.getText() + " " + countryName.getText()).toLowerCase());
                 }
+                cityName.clear();
+                countryName.clear();
             }
             else
             {
@@ -413,6 +415,7 @@ public class UI
         currentTraveler.getTravelerCitiesArray().clear();
         currentTraveler.setVisit(bestCity.getCityName());
         Traveler.saveTravelers();
+        mysql.post();
 
         CollaborativeFiltering.getCriteria();
 

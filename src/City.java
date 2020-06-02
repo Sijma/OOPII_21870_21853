@@ -11,8 +11,9 @@ import java.util.ArrayList;
 public class City implements Serializable
 {
 	public static ArrayList<City> allCities = new ArrayList<>();
+	public static int newCities;
 
-	private int Museums,Cafes,Restaurants,Bars,Beaches,Monuments;
+	private int Museums,Cafes,Restaurants,Bars,Beaches,Monuments,totalWords, distinctWords;
 	private double lat,lon;
 	private String weather;
 	private String name, cityName;
@@ -55,8 +56,10 @@ public class City implements Serializable
 		cityName = name + ","+ country;
 	}
 
-	public City(String name, int museums, int cafes, int restaurants , int bars, int beaches, int monuments, double lat, double lon, String weather) {
+	public City(String name, String country, double lat, double lon, int museums, int cafes, int restaurants , int bars, int beaches, int monuments, String weather, int totalWords, int distinctWords)
+	{
 		this.name = name;
+		this.country = country;
 		this.Museums = museums;
 		this.Cafes = cafes;
 		this.Restaurants = restaurants;
@@ -66,6 +69,9 @@ public class City implements Serializable
 		this.lat=lat;
 		this.lon = lon;
 		this.weather = weather;
+		this.totalWords = totalWords;
+		this.distinctWords = distinctWords;
+		this.cityName = name + ","+ country;
 	}
 
 	public String getWikiInfo()
@@ -149,8 +155,15 @@ public class City implements Serializable
 
 	public void setCountry(String country) { this.country = country; }
 
+	public int getTotalWords() { return totalWords; }
 
-/**
+	public void setTotalWords(int totalWords) { this.totalWords = totalWords; }
+
+	public int getDistinctWords() { return distinctWords; }
+
+	public void setDistinctWords(int distinctWords) { this.distinctWords = distinctWords; }
+
+	/**
 	 *
 	 * @param CityName String to check validity of as existing city
 	 * @return boolean depending on valid or not
@@ -180,7 +193,7 @@ public class City implements Serializable
 	 * @return amount of distinct words
 	 */
 
-	public int CountDistinctWords(String str)
+	public void CountDistinctWords(String str)
 	{
 		String s[]=str.split(" ");
 		ArrayList<String> list=new ArrayList<String>();
@@ -191,7 +204,7 @@ public class City implements Serializable
 				list.add(s[i]);
 			}
 		}
-		return 	list.size();
+		setDistinctWords(list.size());
 	}
 
 /**
@@ -200,10 +213,10 @@ public class City implements Serializable
 	 * @return amount of total words
 	 */
 
-	public static int CountTotalWords(String str) {
-
+	public void CountTotalWords(String str)
+	{
 		String s[]=str.split(" ");
-		return 	s.length;
+		setTotalWords(s.length);
 	}
 
 
@@ -281,12 +294,9 @@ public class City implements Serializable
 			CityCoords(tempCity);
 			CityWeather(tempCity);
 
-			while (thread.isAlive())
-			{
-				System.out.println("Still going");
-				thread.join();
-			}
-		allCities.add(tempCity);
+			thread.join();
+			allCities.add(tempCity);
+			newCities++;
 		}
 		else
 		{

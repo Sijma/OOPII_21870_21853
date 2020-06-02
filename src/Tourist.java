@@ -30,7 +30,7 @@ public class Tourist extends Traveler
 				matching = matching + temp;
 			}
 		}
-		result = (similars*matching*1.0)/City.CountTotalWords(c.getWikiInfo());
+		result = (similars*matching*1.0)/c.getTotalWords();
 		result = result *100;
 		return result;
   	}

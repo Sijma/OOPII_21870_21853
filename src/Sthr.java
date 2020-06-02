@@ -16,6 +16,9 @@ public class Sthr extends Thread
 		try
 		{
 			tempCity.setWikiInfo(tempCity.cityWikiInfo(tempCity.getName()));
+			tempCity.CountTotalWords(tempCity.getWikiInfo());
+			tempCity.CountDistinctWords(tempCity.getWikiInfo());
+
 			int i;
 			int count;
 			String text;
