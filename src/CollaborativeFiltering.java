@@ -13,8 +13,6 @@ public class CollaborativeFiltering
 
 		String cityRecommendation = Collections.max(cityToRank.entrySet(), Comparator.comparingInt(Map.Entry::getValue)).getKey();
 
-		System.out.println("Recommended city"+cityRecommendation);
-
 		if (!Traveler.AllTravelers.get(Traveler.traveler_counter-1).getVisit().equals(cityRecommendation))
 		{
 			UI recUI = new UI();
@@ -28,7 +26,6 @@ public class CollaborativeFiltering
 	{
 		int sum=0;
 		for (int i=0; i<currentTraveller.length;i++) sum+=currentTraveller[i]*candidateTraveller[i];
-		System.out.println("rank"+sum);
 		return sum;
 	}
 }
