@@ -20,11 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="94efbb5f-e699-47c0-ae03-d03b605b2af4" name="Default Changelist" comment="final fixes">
-      <change afterPath="$PROJECT_DIR$/out/production/OOPII_21870_21853/mysql.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOPII_21870_21853/CollaborativeFiltering.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOPII_21870_21853/CollaborativeFiltering.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/TravelersFile" beforeDir="false" afterPath="$PROJECT_DIR$/resources/TravelersFile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CollaborativeFiltering.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CollaborativeFiltering.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/TravelersFile" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,8 +118,8 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Main (1)" />
       <item itemvalue="Application.Main" />
+      <item itemvalue="Application.Main (1)" />
       <item itemvalue="Application.OpenData" />
     </list>
     <recent_temporary>
@@ -299,7 +296,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591041500814</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="final fixes">
+      <created>1591066810346</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1591066810346</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -465,13 +469,13 @@
     <state x="446" y="87" key="SettingsEditor/0.0.1920.1032/1920.0.1920.1080@0.0.1920.1032" timestamp="1583624164519" />
     <state x="446" y="87" width="1024" height="844" key="SettingsEditor/0.0.1920.1035/1920.0.1920.1080@0.0.1920.1035" timestamp="1585127064165" />
     <state x="446" y="87" key="SettingsEditor/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591030081301" />
-    <state x="558" y="248" key="Vcs.Push.Dialog.v2" timestamp="1591041522301">
+    <state x="558" y="248" key="Vcs.Push.Dialog.v2" timestamp="1591066821576">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="558" y="246" key="Vcs.Push.Dialog.v2/0.0.1920.1032/1919.0.1920.1080@0.0.1920.1032" timestamp="1583429981607" />
     <state x="558" y="246" key="Vcs.Push.Dialog.v2/0.0.1920.1032/1920.0.1920.1080@0.0.1920.1032" timestamp="1583623887825" />
     <state x="558" y="247" key="Vcs.Push.Dialog.v2/0.0.1920.1035/1920.0.1920.1080@0.0.1920.1035" timestamp="1585416499222" />
-    <state x="558" y="248" key="Vcs.Push.Dialog.v2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591041522301" />
+    <state x="558" y="248" key="Vcs.Push.Dialog.v2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591066821576" />
     <state x="98" y="95" width="1724" height="839" key="com.intellij.dvcs.ui.CompareBranchesDialog" timestamp="1583238530887">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
