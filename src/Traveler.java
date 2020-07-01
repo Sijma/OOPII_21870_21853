@@ -1,8 +1,7 @@
 import java.io.*;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
 
 public class Traveler implements Comparable<Traveler>, Serializable
 {
@@ -252,5 +251,38 @@ public class Traveler implements Comparable<Traveler>, Serializable
 		{
 			travelerCitiesArray.add(cityBuilder.buildCity(cityNamesList.get(i)));
 		}
+	}
+
+	public void popularity() throws IOException
+	{
+		UI popularityAlert = new UI();
+
+		if(!popularityAlert.alertWindowChoice("Popularity", "Would you like to know which city of the ones you selected is the most popular?", "Yes", "No")) return;
+
+		HashMap<String, Integer> popularCities = new HashMap<>();
+		int i;
+		for (i=0;i<=travelerCitiesArray.size()-1;i++)
+		{
+			popularCities.put(travelerCitiesArray.get(i).getName(),travelerCitiesArray.get(i).getTotalWords());
+		}
+
+		LinkedHashMap<String, Integer> sortedPopularCities = new LinkedHashMap<>();
+
+		popularCities.entrySet()
+				.stream()
+				.sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+				.forEachOrdered(e -> sortedPopularCities.put(e.getKey(), e.getValue()));
+
+		Map.Entry<String,Integer> entry = sortedPopularCities.entrySet().iterator().next();
+		String maxName = entry.getKey();
+
+		popularityAlert.alertWindowBasic("Popularity", "The most popular city between your selections is: "+maxName, "Continue");
+
+		System.out.println(sortedPopularCities);
+
+		FileOutputStream fos = new FileOutputStream("resources/PopularCities", true);
+		ObjectOutputStream oos = new ObjectOutputStream(fos);
+		oos.writeObject(sortedPopularCities);
+		oos.close();
 	}
 }

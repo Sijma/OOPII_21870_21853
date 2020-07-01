@@ -21,7 +21,7 @@ public class UI
 
     Stage window = new Stage();
     Scene mainMenu, newClientForm, cityListUI;
-    boolean answer, finished;
+    boolean answer;
 
     public void buildMainMenu()
     {
@@ -412,12 +412,12 @@ public class UI
         bestCity = currentTraveler.compareCities(currentTraveler.getTravelerCitiesArray());
         alertWindowBasic("Result", "Your suggested destination is: "+bestCity.getName()+" in "+bestCity.getCountry(),"Continue");
 
-        currentTraveler.getTravelerCitiesArray().clear();
         currentTraveler.setVisit(bestCity.getCityName());
+        CollaborativeFiltering.getCriteria();
+        currentTraveler.popularity();
+        currentTraveler.getTravelerCitiesArray().clear();
         Traveler.saveTravelers();
         mysql.post();
-
-        CollaborativeFiltering.getCriteria();
 
         if (Traveler.travelerExists(Traveler.AllTravelers.get(Traveler.traveler_counter-1)))
         {
